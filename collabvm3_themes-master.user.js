@@ -6,7 +6,8 @@
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
 // @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.css#sha256=c334336556acad4179a191c458d71eabb901ab5f38ebc0939d18f65cdb8261c9
-// @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.html#sha256=863b2c89d7dd0b82c9095326ecc1444b92cd2f95000963a98b44eaf8dd7eb5ca
+// @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.html#sha256=283a0251b726d6de2160bf047c67fd95c8182d0ff163c37d35e0d8da7a2e8cfe
+// @grant GM_getResourceText
 // ==/UserScript==
 
 // -------------------------------------
@@ -135,7 +136,13 @@ function addThemesModal(){
     // This imports the colour picker script and stylesheet
     
     const htmlResText = GM_getResourceText("htmlInject");
-    document.body.appendChild(htmlResText);
+    let themesContainer = document.createElement("div");
+    themesContainer.classList.toggle("fade");
+    themesContainer.classList.toggle("modal");
+    themesContainer.id = "themes-modal"
+    themesContainer.setAttribute("tabindex", "-1");
+    themesContainer.innerText = htmlResText;
+    document.body.appendChild(themesContainer);
     
     let colorisContainer = document.getElementById("themes-body");
     colorisContainer.classList.toggle("theme-body");
@@ -151,8 +158,8 @@ function addThemesModal(){
     
     // Makes the close button work
     
-    const elements = ["backInput", "fontInput", "borderInput",\
-    "glowBlurInput", "glowRadiusInput", "fontSizeInput", "headerFontInput",\
+    const elements = ["backInput", "fontInput", "borderInput",
+    "glowBlurInput", "glowRadiusInput", "fontSizeInput", "headerFontInput",
         "blurRadiusInput"
     ]
     
@@ -200,23 +207,23 @@ function clearColourPicker(cssprop){
 // void addColourTable() - Adds the list of selectable elements.
 function addColourTable(){
     let colourTable = document.createElement("table");
-    colourTable.innerHTML = '<tbody>
-    <tr cssprop="--bs-body-bg"><td>Background Colour</td></tr>
-    <tr cssprop="--bs-tertiary-bg"><td>Header Background</td></tr>
-    <tr cssprop="--bs-primary-text-emphasis"><td>Primary Button</td></tr>
-    <tr cssprop="--bs-gray-700"><td>Secondary Button</td></tr>
-    <tr cssprop="--bs-primary"><td>Primary Button Hover</td></tr>
-    <tr cssprop="--bs-gray-800"><td>Secondary Button Hover</td></tr>
-    <tr cssprop="--bs-body-color"><td>Text Colour</td></tr>
-    <tr cssprop="--active-user-bg"><td>Active User Back</td></tr>
-    <tr cssprop="--waiting-user-bg"><td>Waiting User Back</td></tr>
-    <tr cssprop="--bs-danger-text-emphasis"><td>Admin Colour</td></tr>
-    <tr cssprop="--bs-warning-text-emphasis"><td>Mod Colour</td></tr>
-    <tr cssprop="--bs-navbar-new-color"><td>Header Text Colour</td></tr>
-    <tr cssprop="--bs-gray-300"><td>Disabled Keyboard Colour</td></tr>
-    <tr cssprop="--bs-info-text-emphasis"><td>Text Highlight Colour</td></tr>
-    <tr cssprop="--bs-border-color"><td>Border Colour</td></tr>
-    <tr cssprop="--glow-colour"><td>Glow Colour</td></tr>
+    colourTable.innerHTML = '<tbody>\
+    <tr cssprop="--bs-body-bg"><td>Background Colour</td></tr>\
+    <tr cssprop="--bs-tertiary-bg"><td>Header Background</td></tr>\
+    <tr cssprop="--bs-primary-text-emphasis"><td>Primary Button</td></tr>\
+    <tr cssprop="--bs-gray-700"><td>Secondary Button</td></tr>\
+    <tr cssprop="--bs-primary"><td>Primary Button Hover</td></tr>\
+    <tr cssprop="--bs-gray-800"><td>Secondary Button Hover</td></tr>\
+    <tr cssprop="--bs-body-color"><td>Text Colour</td></tr>\
+    <tr cssprop="--active-user-bg"><td>Active User Back</td></tr>\
+    <tr cssprop="--waiting-user-bg"><td>Waiting User Back</td></tr>\
+    <tr cssprop="--bs-danger-text-emphasis"><td>Admin Colour</td></tr>\
+    <tr cssprop="--bs-warning-text-emphasis"><td>Mod Colour</td></tr>\
+    <tr cssprop="--bs-navbar-new-color"><td>Header Text Colour</td></tr>\
+    <tr cssprop="--bs-gray-300"><td>Disabled Keyboard Colour</td></tr>\
+    <tr cssprop="--bs-info-text-emphasis"><td>Text Highlight Colour</td></tr>\
+    <tr cssprop="--bs-border-color"><td>Border Colour</td></tr>\
+    <tr cssprop="--glow-colour"><td>Glow Colour</td></tr>\
     </tbody>';
     // Adds table entries with corresponding css properties
     colourTable.id = "colourTable";
