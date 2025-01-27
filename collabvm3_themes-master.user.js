@@ -71,7 +71,7 @@ function setColour(e){
 // Also to layout and theme the "themesModal"
 function setUserColours(){
     let userCss = document.createElement("style");
-    const cssResText = await GM_getResourceText("cssInject");
+    const cssResText = GM_getResourceText("cssInject");
     userCss.innerHTML = cssResText;
 
     document.getElementsByTagName('head')[0].appendChild(userCss);
@@ -134,7 +134,7 @@ function addThemesModal(){
     document.getElementsByTagName('head')[0].appendChild(colorisStyle);
     // This imports the colour picker script and stylesheet
     
-    const htmlResText = await GM_getResourceText("htmlInject");
+    const htmlResText = GM_getResourceText("htmlInject");
     document.body.appendChild(htmlResText);
     
     let colorisContainer = document.getElementById("themes-body");
