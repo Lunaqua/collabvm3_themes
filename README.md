@@ -10,7 +10,7 @@ web application.
 
 This script is for use with a userscript extension such as 
 [TamperMonkey](https://www.tampermonkey.net/). A quick download for such 
-extensions is available [here]. 
+extensions is available [here](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/master/collabvm3_themes-master.user.js) for master release. 
 
 Pre-1.6 releases can be found in old/.
 
