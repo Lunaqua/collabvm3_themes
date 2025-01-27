@@ -6,7 +6,7 @@
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
 // @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.css#sha256=c334336556acad4179a191c458d71eabb901ab5f38ebc0939d18f65cdb8261c9
-// @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.html#sha256=283a0251b726d6de2160bf047c67fd95c8182d0ff163c37d35e0d8da7a2e8cfe
+// @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.html
 // @grant GM_getResourceText
 // ==/UserScript==
 
@@ -143,51 +143,21 @@ function addThemesModal(){
     themesContainer.setAttribute("tabindex", "-1");
     themesContainer.innerText = htmlResText;
     document.body.appendChild(themesContainer);
-    
-    let colorisContainer = document.getElementById("themes-body");
-    colorisContainer.classList.toggle("theme-body");
-    let coloris = document.createElement("input");
-    coloris.type = "text";
-    coloris.setAttribute('data-coloris', "");
-    coloris.classList.toggle("theme-colour-selector");
-    coloris.id = "cPicker";
-    coloris.setAttribute('cssprop', "--bs-body-bg");
 
-    let themeButtonClose = document.getElementById("themeButtonClose");
-    themeButtonClose.addEventListener("click", function(e) { showThemesModal(e, "display:none;") });
-    
     // Makes the close button work
     
     const elements = ["backInput", "fontInput", "borderInput",
     "glowBlurInput", "glowRadiusInput", "fontSizeInput", "headerFontInput",
-        "blurRadiusInput"
+        "blurRadiusInput", "coloris"
     ]
     
     elements.forEach( item => item.addEventListener('input', function(e) { setColour(e) }))
-    
-    colorisContainer.appendChild(coloris);
-    coloris.addEventListener('input', function(e) { setColour(e) });
+
     // Create the input box, and add the correct class/attribs
     // Runs setColour when the colour input is changed.
     
-    let saveButton = document.createElement("button");
-    saveButton.id = "saveButton";
-    saveButton.onclick = function(){saveTheme()};
-    saveButton.innerHTML = "Save";
-    saveButton.classList.toggle("theme-button-save");
-    saveButton.classList.toggle("btn");
-    saveButton.classList.toggle("btn-primary");
-
-    let clearButton = document.createElement("button");
-    clearButton.id = "clearButton";
-    clearButton.onclick = function(){clearTheme()};
-    clearButton.innerHTML = "Clear";
-    clearButton.classList.toggle("theme-button-clear");
-    clearButton.classList.toggle("btn");
-    clearButton.classList.toggle("btn-secondary");
-    
-    colorisContainer.appendChild(saveButton);
-    colorisContainer.appendChild(clearButton);
+    let themeButtonClose = document.getElementById("themeButtonClose");
+    themeButtonClose.addEventListener("click", function(e) { showThemesModal(e, "display:none;") });
     
     // Creates the save and clear button, and places them in the layout.
 
