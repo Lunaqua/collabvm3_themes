@@ -20,7 +20,8 @@
     backdrop-filter: blur(var(--backdrop-blur-radius));
 }
 h4 {
-    margin-top: -0.6em;
+    margin-bottom: -0.3em;
+    margin-top: -0.15em;
 }
 h5 {
     font-size: calc(var(--bs-body-font-size) + 0.25rem);
