@@ -7,7 +7,7 @@
     <button type="button" id="themeButtonClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
     <div id="themes-body" class="modal-body">
-        <h4>Colour Selection</h4>
+        <h4 id="colourSelectionHeader">Colour Selection</h4>
         <table id="colourTable" class="theme-element-selector">
         <tbody>
             <tr cssprop="--bs-body-bg"><td>Background Colour</td></tr>
@@ -29,8 +29,10 @@
         </tbody>
         </table>
         
+        <div id="otherSettingsHeader">
         <hr>
         <h4>Other Settings</h4>
+        </div>
         
         <input id="fontInput" class="fontInput" type="text" name="fontInput" placeholder="Enter a valid font name" cssprop="--bs-body-font-family"></input>
         <label class="fontLabel" for="fontInput">Custom Font</label>
@@ -56,8 +58,10 @@
         <input id="blurRadiusInput" class="blurRadiusInput" type="range" min="0" max="20" step="0.1" value="0" name="blurRadiusInput" cssprop="--backdrop-blur-radius"></input>
         <label class="blurRadiusLabel" for="blurRadiusInput">Background Blur (px)</label>
         
+        <div id="themeManHeader">
         <hr>
         <h4>Theme Management</h4>
+        </div>
         
         <button id="saveButton" onclick="saveTheme()" class="theme-button-save btn btn-primary">Save</button>
         <button id="clearButton" onclick="clearTheme()" class="theme-button-clear btn btn-secondary">Clear</button>
