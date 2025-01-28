@@ -180,7 +180,7 @@ box-shadow: 0px 0px var(--glow-blur) var(--glow-radius) var(--glow-colour);
 .form-range::-moz-range-thumb:active {
     background-color: var(--bs-primary) !important;
 }
-.theme-body {
+#themes-body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
