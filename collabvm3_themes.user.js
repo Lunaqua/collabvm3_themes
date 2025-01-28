@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      1.6
+// @version      1.6.1
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
-// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/stable/resource.css#sha256=66d844cc476813d252433cbf0b733590ac44eb914fd1b44f0fdb457bbb67bf15
+// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/stable/resource.css#sha256=b5e5e5f809a53b82aca4434f1bd4dca493c46b54733d8effaaa4f4b3481daed8
 // @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/stable/resource.html#sha256=26caaa9aeed3cf1767bb1b8887bcd46a7cd00a44e5f2b391f069b5c8c7f41c71
 // @grant GM_getResourceText
 // ==/UserScript==
