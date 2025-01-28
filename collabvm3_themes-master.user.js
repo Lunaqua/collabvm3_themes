@@ -153,6 +153,8 @@ function addThemesModal(){
     coloris.classList.toggle("theme-colour-selector");
     coloris.id = "cPicker";
     coloris.setAttribute('cssprop', "--bs-body-bg");
+    
+    colorisContainer.appendChild(coloris);
 
     // Makes the close button work
     
