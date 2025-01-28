@@ -329,6 +329,7 @@ box-shadow: 0px 0px var(--glow-blur) var(--glow-radius) var(--glow-colour);
     animation-timing-function: cubic-bezier(0.64, 0, 0.78, 0);
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     backdrop-filter: blur(var(--backdrop-blur-radius));
+    color: var(--bs-tertiary-bg);
 }
 .card:hover {
     border-color: var(--bs-primary);

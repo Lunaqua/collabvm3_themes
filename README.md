@@ -9,9 +9,21 @@ at
 web application. 
 
 This script is for use with a userscript extension such as 
-[TamperMonkey](https://www.tampermonkey.net/). A quick download for such 
-extensions is available [here](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/master/collabvm3_themes-master.user.js) for master release. 
+[TamperMonkey](https://www.tampermonkey.net/). It might work with 
+[GreaseMonkey](https://www.greasespot.net/) as well. 
 
-Pre-1.6 releases can be found in old/.
+## Downloads
+
+Master Branch: most up-to-date, might be broken.
+
+[Download](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/master/collabvm3_themes.user.js)
+
+Stable Branch: pushed to when stuff actually works.
+
+[Download](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/stable/collabvm3_themes.user.js)
+
+Pre-1.6 releases can be found in old/
+
+## by navi4205
 
 This project is licensed under the MIT license.
