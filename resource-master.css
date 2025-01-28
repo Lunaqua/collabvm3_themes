@@ -1,3 +1,5 @@
+/* CollabVM3 Themes CSS resource file */
+
 #user-list .turn-active {
 --bs-table-bg:var(--active-user-bg) !important;
 }

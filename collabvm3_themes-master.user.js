@@ -144,6 +144,15 @@ function addThemesModal(){
     themesContainer.setAttribute("tabindex", "-1");
     themesContainer.innerHTML = htmlResText;
     document.body.appendChild(themesContainer);
+    
+    let colorisContainer = document.getElementById("themes-body");
+    colorisContainer.classList.toggle("theme-body");
+    let coloris = document.createElement("input");
+    coloris.type = "text";
+    coloris.setAttribute('data-coloris', "");
+    coloris.classList.toggle("theme-colour-selector");
+    coloris.id = "cPicker";
+    coloris.setAttribute('cssprop', "--bs-body-bg");
 
     // Makes the close button work
     
