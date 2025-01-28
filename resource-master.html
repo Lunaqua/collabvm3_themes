@@ -5,27 +5,37 @@
     <button type="button" id="themeButtonClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
     <div id="themes-body" class="modal-body themes-body">
-        <input type="text" datacoloris class="theme-colour-selector" id="cPicker" cssprop="--bs-body-bg">
-        <input id="fontInput" class="fontInput" type="text" name="fontInput" placeholder="Enter a valid font name" cssprop="--bs-body-font-family">
+        <input type="text" datacoloris class="theme-colour-selector" id="cPicker" cssprop="--bs-body-bg"></input>
+        
         <button id="saveButton" onclick="saveTheme()" class="theme-button-save btn btn-primary">Save</button>
         <button id="clearButton" onclick="clearTheme()" class="theme-button-clear btn btn-secondary">Clear</button>
+        
+        <input id="fontInput" class="fontInput" type="text" name="fontInput" placeholder="Enter a valid font name" cssprop="--bs-body-font-family"></input>
         <label class="fontLabel" for="fontInput">Custom Font</label>
-        <input id="backInput" class="backInput" type="url" name="backInput" placeholder="Enter a valid image url" cssprop="background-image">
-        <label class="backLabel" for="backInput">Background Image</input>
-        <input id="borderInput" class="borderInput" type="range" min="0" max="5" name="borderInput" value="0.375" step="0.001" cssprop="--bs-border-radius">
-        <label class="borderLabel" for="borderInput">Border Radius (em)</input>
-        <input id="glowBlurInput" class="glowBlurInput" type="range" min="0" max="120" name="glowBlurInput" value="0" cssprop="--glow-blur">
-        <label class="glowBlurLabel" for="glowBlurInput">Glow Blur (px)</input>
-        <input id="glowRadiusInput" class="glowRadiusInput" type="range" min="0" max="100" name="glowRadiusInput" value="0" step="0.5" cssprop="--glow-radius">
-        <label class="glowRadiusLabel" for="glowRadiusInput">Glow Radius (em)</input>
-        <input id="fontSizeInput" class="fontSizeInput" type="number" min="0.1" max="5" step="0.1" value="1" name="fontSizeInput" cssprop="--bs-body-font-size">
-        <label class="fontSizeLabel" for="fontSizeInput">Base Font Size (rem)</input>
-        <input id="headerFontInput" class="headerFontInput" type="text" placeholder="Enter a valid font name" name="headerFontInput" cssprop="--bs-header-font-family">
-        <label class="headerFontLabel" for="headerFontInput">Custom Title Font</input>
-        <input id="blurRadiusInput" class="blurRadiusInput" type="range" min="0" max="20" step="0.1" value="0" name="blurRadiusInput" cssprop="--backdrop-blur-radius">
-        <label class="blurRadiusLabel" for="blurRadiusInput">Background Blur (px)</input>
-        <input id="fontSizeInput" class="fontSizeInput" type="number" min="0.1" max= "5" step="0.1" value="1" name="fontSizeInput" cssprop="--bs-body-font-size">
-        <label class="fontSizeLabel" for="fontSizeInput">Base Font Size (rem)</input>
+        
+        <input id="backInput" class="backInput" type="url" name="backInput" placeholder="Enter a valid image url" cssprop="background-image"></input>
+        <label class="backLabel" for="backInput">Background Image</label>
+        
+        <input id="borderInput" class="borderInput" type="range" min="0" max="5" name="borderInput" value="0.375" step="0.001" cssprop="--bs-border-radius"></input>
+        <label class="borderLabel" for="borderInput">Border Radius (em)</label>
+        
+        <input id="glowBlurInput" class="glowBlurInput" type="range" min="0" max="120" name="glowBlurInput" value="0" cssprop="--glow-blur"><input>
+        <label class="glowBlurLabel" for="glowBlurInput">Glow Blur (px)</label>
+        
+        <input id="glowRadiusInput" class="glowRadiusInput" type="range" min="0" max="100" name="glowRadiusInput" value="0" step="0.5" cssprop="--glow-radius"></input>
+        <label class="glowRadiusLabel" for="glowRadiusInput">Glow Radius (em)</label>
+        
+        <input id="fontSizeInput" class="fontSizeInput" type="number" min="0.1" max="5" step="0.1" value="1" name="fontSizeInput" cssprop="--bs-body-font-size"></input>
+        <label class="fontSizeLabel" for="fontSizeInput">Base Font Size (rem)</label>
+        
+        <input id="headerFontInput" class="headerFontInput" type="text" placeholder="Enter a valid font name" name="headerFontInput" cssprop="--bs-header-font-family"></input>
+        <label class="headerFontLabel" for="headerFontInput">Custom Title Font</label>
+        
+        <input id="blurRadiusInput" class="blurRadiusInput" type="range" min="0" max="20" step="0.1" value="0" name="blurRadiusInput" cssprop="--backdrop-blur-radius"></input>
+        <label class="blurRadiusLabel" for="blurRadiusInput">Background Blur (px)</label>
+        
+        <input id="fontSizeInput" class="fontSizeInput" type="number" min="0.1" max= "5" step="0.1" value="1" name="fontSizeInput" cssprop="--bs-body-font-size"></input>
+        <label class="fontSizeLabel" for="fontSizeInput">Base Font Size (rem)</label>
     </div>
 </div>
 </div>

@@ -134,14 +134,15 @@ function addThemesModal(){
     document.getElementsByTagName('head')[0].appendChild(colorisScript);
     document.getElementsByTagName('head')[0].appendChild(colorisStyle);
     // This imports the colour picker script and stylesheet
-    
     const htmlResText = GM_getResourceText("htmlInject");
+    console.log(htmlResText);
+    
     let themesContainer = document.createElement("div");
     themesContainer.classList.toggle("fade");
     themesContainer.classList.toggle("modal");
     themesContainer.id = "themes-modal"
     themesContainer.setAttribute("tabindex", "-1");
-    themesContainer.innerText = htmlResText;
+    themesContainer.textContent = htmlResText;
     document.body.appendChild(themesContainer);
 
     // Makes the close button work
@@ -151,7 +152,10 @@ function addThemesModal(){
         "blurRadiusInput", "coloris"
     ]
     
-    elements.forEach( item => item.addEventListener('input', function(e) { setColour(e) }))
+    elements.forEach( function(item, index) {
+        console.log(item);
+        document.getElementById(item).addEventListener('input', function(e) { setColour(e) })}
+    )
 
     // Create the input box, and add the correct class/attribs
     // Runs setColour when the colour input is changed.
@@ -233,7 +237,6 @@ function main(){
     setUserColours();
     addThemesModal();
     addThemesEntry();
-    addColourPicker();
     addColourTable();
     loadTheme();
 }
