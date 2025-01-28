@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-01-28_1
+// @version      2025-01-28_2
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -28,7 +28,7 @@
 // clear input validity (:valid)
 // individual reset of colours
 
-// Next Steps:
+// Now:
 // custom padding
 // theme export and import
 // Add preset themes
@@ -36,51 +36,7 @@
 // Add image upload
 // UI Revamp to handle this stuff
 
-// Now:
-// Code Cleanup
-
 // -------------------------------------
-
-// void setProperty(whatever e) -
-// Gets the current colour from the colour input, and sets the selected attrib.
-function setProperty(e){
-    let colour = e.currentTarget.value; //this.value (input box)
-    let cssProp = e.currentTarget.getAttribute("cssprop")
-    
-    switch (cssProp) {
-        case "background-image":
-            colour = "url(" + colour + ")";
-            break;
-        case "--bs-border-radius":
-            colour = colour + "em";
-            break;
-        case "--glow-blur":
-            colour = colour + "px";
-            break;
-        case "--glow-radius":
-            colour = colour + "px";
-            break;
-        case "--bs-body-font-size":
-            colour = colour + "rem";
-            break;
-        case "-backdrop-blur-radius":
-            colour = colour + "px";
-            break;
-    }
-    
-    document.body.style.setProperty(cssProp, colour);
-}
-
-// void setUserColours() - Creates a style tag with new required css.
-// This is most to "fix" certain elements that use set colours or rgb values.
-// Also to layout and theme the "themesModal"
-function setUserColours(){
-    let userCss = document.createElement("style");
-    const cssResText = GM_getResourceText("cssInject");
-    userCss.innerHTML = cssResText;
-
-    document.getElementsByTagName('head')[0].appendChild(userCss);
-}
 
 // void saveTheme() - Saves css values to localstorage
 // Very simple, but it works for now
@@ -103,6 +59,52 @@ function loadTheme(){
        //Quickly sets the style tag on body
    }
 }
+
+// void setProperty(whatever e) -
+// Gets the current value from an input property, and sets the selected attrib.
+function setProperty(e){
+    let colour = e.currentTarget.value; //this.value (input box)
+    let cssProp = e.currentTarget.getAttribute("cssprop") 
+    //Gets the css property to be set.
+    
+    switch (cssProp) {
+        case "background-image":
+            colour = "url(" + colour + ")";
+            break;
+        case "--bs-border-radius":
+            colour = colour + "em";
+            break;
+        case "--glow-blur":
+            colour = colour + "px";
+            break;
+        case "--glow-radius":
+            colour = colour + "px";
+            break;
+        case "--bs-body-font-size":
+            colour = colour + "rem";
+            break;
+        case "-backdrop-blur-radius":
+            colour = colour + "px";
+            break;
+    }
+    // Ensures the correct formatting of certain properties
+    
+    document.body.style.setProperty(cssProp, colour);
+    // Applies it to the <body> tag to overwrite anything.
+}
+
+// void setUserColours() - Creates a style tag with new required css.
+// This is mostly to "fix" certain elements that use set colours or rgb values.
+// Also to layout and theme the "themesModal"
+function setUserColours(){
+    let userCss = document.createElement("style");
+    const cssResText = GM_getResourceText("cssInject");
+    // Grab the CSS Resouce from github.
+    userCss.innerHTML = cssResText;
+
+    document.getElementsByTagName('head')[0].appendChild(userCss);
+}
+
 
 // void showThemesModal(whatever e, String display) - Show/hide the themes modal
 // display is just the full css tag.
@@ -137,7 +139,10 @@ function addThemesModal(){
     document.getElementsByTagName('head')[0].appendChild(colorisScript);
     document.getElementsByTagName('head')[0].appendChild(colorisStyle);
     // This imports the colour picker script and stylesheet
+    // Does not work if imported via GreaseMonkey
+    
     const htmlResText = GM_getResourceText("htmlInject");
+    // Grab the HTML resource from github.
     console.log(htmlResText);
     
     let themesContainer = document.createElement("div");
@@ -145,11 +150,15 @@ function addThemesModal(){
     themesContainer.classList.toggle("modal");
     themesContainer.id = "themes-modal"
     themesContainer.setAttribute("tabindex", "-1");
+    // Creates the div modal to inject the HTML source.
+    
     themesContainer.innerHTML = htmlResText;
     document.body.appendChild(themesContainer);
+    // Injects the html and adds the modal to the <body> tag.
     
     let colorisContainer = document.getElementById("themes-body");
     colorisContainer.classList.toggle("theme-body");
+    
     let coloris = document.createElement("input");
     coloris.type = "text";
     coloris.setAttribute('data-coloris', "");
@@ -158,8 +167,9 @@ function addThemesModal(){
     coloris.setAttribute('cssprop', "--bs-body-bg");
     
     colorisContainer.appendChild(coloris);
-
-    // Makes the close button work
+    
+    // Adds the coloris picker to the modal body.
+    // Cannot be added via the injection above for whatever reason.
     
     const elements = ["backInput", "fontInput", "borderInput",
     "glowBlurInput", "glowRadiusInput", "fontSizeInput", "headerFontInput",
@@ -170,18 +180,18 @@ function addThemesModal(){
         document.getElementById(item).addEventListener('input', function(e) { setProperty(e) })}
     )
     
-    // Create the input box, and add the correct class/attribs
-    // Runs setProperty when the colour input is changed.
+    // Adds EventListener's to each of the input fields.
+    // Runs setProperty when the input is changed.
     
     let themeButtonClose = document.getElementById("themeButtonClose");
     themeButtonClose.addEventListener("click", function(e) { showThemesModal(e, "display:none;") });
     
-    // Creates the save and clear button, and places them in the layout.
+    // Makes the close button work.
 
 }
 
 // void clearColourPickter(String cssprop) -
-//Sets the input box to the current value of the targeted element
+// Sets the input box to the current value of the targeted element
 function clearColourPicker(cssprop){
     let colourValue = getComputedStyle(document.body).getPropertyValue(cssprop)
     // Get the current value
@@ -194,6 +204,7 @@ function clearColourPicker(cssprop){
 // void addColourTable() - Adds the list of selectable elements.
 function addColourTable(){
     let colourTable = document.getElementById("colourTable");
+    // Find the colour picker table.
 
     colourTable.addEventListener("click", (e, coloris) => {
       const highlightedClass = "highlighted";
@@ -222,11 +233,11 @@ function addColourTable(){
 
 // void main() - Initialises everything
 function main(){
-    addThemesModal();
-    addThemesEntry();
-    addColourTable();
-    setUserColours();
-    loadTheme();
+    addThemesModal(); // Add the HTML resource
+    addThemesEntry(); // Adds the entry to the dropdown
+    addColourTable(); // Add colour table functionality
+    setUserColours(); // Add the CSS Resource
+    loadTheme(); // Load stored user theme
     
 }
 
