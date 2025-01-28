@@ -37,6 +37,7 @@
 // Add font upload
 // Add image upload
 // UI Revamp to handle this stuff
+// Fix the save and clear buttons
 
 // -------------------------------------
 
