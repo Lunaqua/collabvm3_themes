@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-01-28
+// @version      2025-01-28_1
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -41,29 +41,33 @@
 
 // -------------------------------------
 
-// void setColour(whatever e) -
+// void setProperty(whatever e) -
 // Gets the current colour from the colour input, and sets the selected attrib.
-function setColour(e){
+function setProperty(e){
     let colour = e.currentTarget.value; //this.value (input box)
     let cssProp = e.currentTarget.getAttribute("cssprop")
-    if (cssProp === "background-image"){
-        colour = "url(" + colour + ")";
+    
+    switch (cssProp) {
+        case "background-image":
+            colour = "url(" + colour + ")";
+            break;
+        case "--bs-border-radius":
+            colour = colour + "em";
+            break;
+        case "--glow-blur":
+            colour = colour + "px";
+            break;
+        case "--glow-radius":
+            colour = colour + "px";
+            break;
+        case "--bs-body-font-size":
+            colour = colour + "rem";
+            break;
+        case "-backdrop-blur-radius":
+            colour = colour + "px";
+            break;
     }
-    if (cssProp === "--bs-border-radius"){
-        colour = colour + "em";
-    }
-    if (cssProp === "--glow-blur"){
-        colour = colour + "px";
-    }
-    if (cssProp === "--glow-radius"){
-        colour = colour + "px";
-    }
-    if (cssProp === "--bs-body-font-size"){
-        colour = colour + "rem";
-    }
-    if (cssProp === "--backdrop-blur-radius"){
-        colour = colour + "px";
-    }
+    
     document.body.style.setProperty(cssProp, colour);
 }
 
@@ -123,7 +127,6 @@ function addThemesEntry(){
 }
 
 //void addThemesModal() - Adds the theme modal to the dom for display later
-//The actual content is created in another function
 function addThemesModal(){
     let colorisScript = document.createElement("script");
     colorisScript.src = "https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js";
@@ -164,11 +167,11 @@ function addThemesModal(){
     ]
     
     elements.forEach( function(item, index) {
-        document.getElementById(item).addEventListener('input', function(e) { setColour(e) })}
+        document.getElementById(item).addEventListener('input', function(e) { setProperty(e) })}
     )
     
     // Create the input box, and add the correct class/attribs
-    // Runs setColour when the colour input is changed.
+    // Runs setProperty when the colour input is changed.
     
     let themeButtonClose = document.getElementById("themeButtonClose");
     themeButtonClose.addEventListener("click", function(e) { showThemesModal(e, "display:none;") });
@@ -190,32 +193,7 @@ function clearColourPicker(cssprop){
 
 // void addColourTable() - Adds the list of selectable elements.
 function addColourTable(){
-    let colourTable = document.createElement("table");
-    colourTable.innerHTML = '<tbody>\
-    <tr cssprop="--bs-body-bg"><td>Background Colour</td></tr>\
-    <tr cssprop="--bs-tertiary-bg"><td>Header Background</td></tr>\
-    <tr cssprop="--bs-primary-text-emphasis"><td>Primary Button</td></tr>\
-    <tr cssprop="--bs-gray-700"><td>Secondary Button</td></tr>\
-    <tr cssprop="--bs-primary"><td>Primary Button Hover</td></tr>\
-    <tr cssprop="--bs-gray-800"><td>Secondary Button Hover</td></tr>\
-    <tr cssprop="--bs-body-color"><td>Text Colour</td></tr>\
-    <tr cssprop="--active-user-bg"><td>Active User Back</td></tr>\
-    <tr cssprop="--waiting-user-bg"><td>Waiting User Back</td></tr>\
-    <tr cssprop="--bs-danger-text-emphasis"><td>Admin Colour</td></tr>\
-    <tr cssprop="--bs-warning-text-emphasis"><td>Mod Colour</td></tr>\
-    <tr cssprop="--bs-navbar-new-color"><td>Header Text Colour</td></tr>\
-    <tr cssprop="--bs-gray-300"><td>Disabled Keyboard Colour</td></tr>\
-    <tr cssprop="--bs-info-text-emphasis"><td>Text Highlight Colour</td></tr>\
-    <tr cssprop="--bs-border-color"><td>Border Colour</td></tr>\
-    <tr cssprop="--glow-colour"><td>Glow Colour</td></tr>\
-    </tbody>';
-    // Adds table entries with corresponding css properties
-    colourTable.id = "colourTable";
-    //colourTable.style = "overflow: scroll; width: 200px; height: 50px; display: inline-block";
-    colourTable.classList.toggle("theme-element-selector");
-
-    let colourTableContainer = document.getElementById("themes-body");
-    colourTableContainer.appendChild(colourTable);
+    let colourTable = document.getElementById("colourTable");
 
     colourTable.addEventListener("click", (e, coloris) => {
       const highlightedClass = "highlighted";
