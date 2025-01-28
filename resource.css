@@ -26,6 +26,9 @@ h4 {
 h5 {
     font-size: calc(var(--bs-body-font-size) + 0.25rem);
 }
+hr {
+    margin: 0.6em 0;
+}
 .row {
     --bs-gutter-y: 1.5rem;
     margin-top: calc(-.5*var(--bs-gutter-y));
@@ -188,6 +191,7 @@ box-shadow: 0px 0px var(--glow-blur) var(--glow-radius) var(--glow-colour);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    overflow: auto;
 }
 #colourSelectionHeader {
     grid-row: 1;

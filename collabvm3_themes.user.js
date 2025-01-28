@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-01-28_2
+// @version      2025-01-28_3
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -19,6 +19,7 @@
 // background effects (scaling, blur, positioning, blend-mode)
 // Custom layouts
 // theme (n)ovi store
+// A proper flexible responsive themes dialogue.
 
 // Fixes:
 // fix text highlight
@@ -27,6 +28,7 @@
 // persistent font and background inputs
 // clear input validity (:valid)
 // individual reset of colours
+// Make CSS nicer using grid template stuff
 
 // Now:
 // custom padding
