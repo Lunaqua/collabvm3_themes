@@ -5,7 +5,7 @@
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
-// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/stable/resource.css#sha256=b5e5e5f809a53b82aca4434f1bd4dca493c46b54733d8effaaa4f4b3481daed8
+// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/stable/resource.css#sha256=26746122e5818e8ecce33ea381b73d941a43e65d638303a7225cdc530b718182
 // @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/stable/resource.html#sha256=26caaa9aeed3cf1767bb1b8887bcd46a7cd00a44e5f2b391f069b5c8c7f41c71
 // @grant GM_getResourceText
 // ==/UserScript==
