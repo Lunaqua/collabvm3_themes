@@ -1,5 +1,3 @@
-/*CSS Resource for the CollabVM 3 Themes userscript*/
-
 #user-list .turn-active {
 --bs-table-bg:var(--active-user-bg) !important;
 }

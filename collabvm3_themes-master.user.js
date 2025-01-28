@@ -5,7 +5,7 @@
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
-// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.css#sha256=c334336556acad4179a191c458d71eabb901ab5f38ebc0939d18f65cdb8261c9
+// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.css
 // @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource-master.html
 // @grant GM_getResourceText
 // ==/UserScript==
@@ -142,21 +142,20 @@ function addThemesModal(){
     themesContainer.classList.toggle("modal");
     themesContainer.id = "themes-modal"
     themesContainer.setAttribute("tabindex", "-1");
-    themesContainer.textContent = htmlResText;
+    themesContainer.innerHTML = htmlResText;
     document.body.appendChild(themesContainer);
 
     // Makes the close button work
     
     const elements = ["backInput", "fontInput", "borderInput",
     "glowBlurInput", "glowRadiusInput", "fontSizeInput", "headerFontInput",
-        "blurRadiusInput", "coloris"
+        "blurRadiusInput", "cPicker"
     ]
     
     elements.forEach( function(item, index) {
-        console.log(item);
         document.getElementById(item).addEventListener('input', function(e) { setColour(e) })}
     )
-
+    
     // Create the input box, and add the correct class/attribs
     // Runs setColour when the colour input is changed.
     
@@ -234,11 +233,12 @@ function addColourTable(){
 
 // void main() - Initialises everything
 function main(){
-    setUserColours();
     addThemesModal();
     addThemesEntry();
     addColourTable();
+    setUserColours();
     loadTheme();
+    
 }
 
 main()
