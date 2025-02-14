@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-01-28_3
+// @version      2025-02-14
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -37,7 +37,6 @@
 // Add font upload
 // Add image upload
 // UI Revamp to handle this stuff
-// Fix the save and clear buttons
 
 // -------------------------------------
 
@@ -190,6 +189,11 @@ function addThemesModal(){
     themeButtonClose.addEventListener("click", function(e) { showThemesModal(e, "display:none;") });
     
     // Makes the close button work.
+    
+    let saveButton = document.getElementById("saveButton");
+    saveButton.addEventListener("click", (e) > saveTheme());
+    let clearButton = document.getElementById("clearButton");
+    clearButton.addEventListener("click", (e) > clearTheme());
 
 }
 
