@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8"/>
+<title>NewUI Concept</title>
+<link href="newUI.css" rel="stylesheet" />
+</head>
+<BODY>
+
+<H1>NewUI concept</H1>
+
+<div class="modal themes-modal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <header class="modal-header">
+            <nav class="themes-nav">
+            <a id="page-1">Presets and Management</a>
+            <a id="page-2">Fonts and Images</a>
+            <a id="page-3">Colour Settings</a>
+            <a id="page-4">Other Settings</a>
+            </nav>
+        <button type="button" id="themesButtonClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </header>
+        
+        <div class="themes-page" id="themesPageOne">
+            <aside class="themes-page-side">
+            <h4 class="themes-input-header">presets</h4>
+            <table class="table-selector" id="themesPresetSelector">
+            <tbody>
+                <tr class="themes-preset-unsaved"><td>&ltunsaved&gt</td></tr>
+                <tr class="themes-preset-default"><td>default</td></tr>
+                <tr class="themes-preset"><td>test preset 1</td></tr>
+                <tr class="themes-preset"><td>test preset 2</td></tr>
+                <tr class="themes-preset"><td>test preset 3</td></tr>
+                <tr class="themes-preset"><td>test preset 4</td></tr>
+                <tr class="themes-preset"><td>test preset 5</td></tr>
+                <tr class="themes-preset-local"><td>test preset 5 (modified)</td></tr>
+                <tr class="themes-preset"><td>test preset 6</td></tr>
+                <tr class="themes-preset-local"><td>test local</td></tr>
+            </tbody>
+            </table>
+            <button id="themesPresetApplyButton" class="btn btn-primary">apply</button>
+            </aside>
+            
+            <main class="themes-page-main">
+                <div class="themes-input-container" id="themesNameInputCon"> <label for="themesNameInput"><h4 class="themes-input-header">name</h4></label>
+                <input id="themesNameInput" class="themes-input-box" type="text" name="themesNameInput" placeholder="&ltunsaved&gt"></input>
+                </div>
+                <div class="themes-input-container" id="themesAuthorInputCon"> <label for="themesAuthorInput"><h4 class="themes-input-header">name</h4></label>
+                <input id="themesAuthorInput" class="themes-input-box" type="text" name="themesAuthorInput" placeholder=""></input>
+                </div>
+                <div class="themes-large-input-container" id="themesDescInputCon"> <label for="themesDescInput"><h4 class="themes-input-header">name</h4></label>
+                <input id="themesDescInput" class="themes-large-input-box" type="text" name="themesDescInput" placeholder=""></input>
+                </div>
+            </main>
+            
+            <footer class="themes-page-footer">
+                <div class="themes-double-button-con" id="themesFileImExCon">
+                <h4 class="themes-button-header">file import/export</h4>
+                <button id="themesFileImportButton" class="btn btn-primary">import...</button>
+                <button id="themesFileExportButton" class="btn btn-tertiary">export...</button>
+                </div>
+                
+                <div class="themes-double-button-con" id="themesLocalSaveClearCon">
+                <h4 class="themes-button-header">local save/clear</h4>
+                <button id="themesLocalSaveButton" class="btn btn-primary">save</button>
+                <button id="themesLocalClearButton" class="btn btn-tertiary">clear</button>
+                </div>                
+            </footer>
+        </div>
+    </div>
+    </div>
+</div>
+
+</BODY>
+</HTML>
