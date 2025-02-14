@@ -5,7 +5,7 @@ whatever they end up calling it). This is currently available via public beta
 at 
 [https://computernewb.com/collab-vm/experimental-vm](https://computernewb.com/collab-vm/experimental-vm)
 . This script does 
-**not** work via CollabVM 1.2, neither the current, or old (classic)
+**not** work with CollabVM 1.2, neither the current, or old (classic)
 web application. 
 
 This script is for use with a userscript extension such as 
@@ -18,7 +18,7 @@ Master Branch: most up-to-date, might be broken.
 
 [Download](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/master/collabvm3_themes.user.js)
 
-Stable Branch: pushed to when stuff actually works.
+Stable Branch: pushed to when stuff actually works. (Currently v1.6.2)
 
 [Download](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/stable/collabvm3_themes.user.js)
 
