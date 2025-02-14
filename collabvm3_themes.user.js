@@ -191,9 +191,9 @@ function addThemesModal(){
     // Makes the close button work.
     
     let saveButton = document.getElementById("saveButton");
-    saveButton.addEventListener("click", (e) > saveTheme());
+    saveButton.addEventListener("click", (e) => saveTheme());
     let clearButton = document.getElementById("clearButton");
-    clearButton.addEventListener("click", (e) > clearTheme());
+    clearButton.addEventListener("click", (e) => clearTheme());
 
 }
 
