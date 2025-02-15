@@ -4,6 +4,28 @@
 <meta charset="utf-8"/>
 <title>NewUI Concept</title>
 <link href="newUI.css" rel="stylesheet" />
+<script>
+    function changePage(pageNum) {
+        let cuPage = document.getElementsByClassName("themes-selected-tab")[0];
+        cuPage.classList.toggle("themes-selected-tab");
+        let cuPageDiv = document.getElementById("themesPage"+cuPage.getAttribute("page"));
+        cuPageDiv.classList.toggle("themes-hide");
+        cuPageDiv.classList.toggle("themes-page");
+        
+        let page = document.getElementById("themesPage"+pageNum);
+        page.classList.toggle("themes-hide");
+        page.classList.toggle("themes-page");
+        
+        let selTab = document.getElementById("page-"+pageNum);
+        selTab.classList.toggle("themes-selected-tab");
+    }
+    
+    /*for (let i=1; i<=4; i++){
+        console.log("page-"+i);
+        let pageTab = document.getElementById("page-"+i);
+        pageTab.addEventListener("click", (e) => changePage(i));
+    }*/
+</script>
 </head>
 <BODY>
 
@@ -14,15 +36,15 @@
     <div class="modal-content">
         <header class="modal-header">
             <nav class="themes-nav"> |
-            <a class="themes-selected-tab" id="page-1">Presets and Management</a> |
-            <a id="page-2">Fonts and Images</a> |
-            <a id="page-3">Colour Settings</a> |
-            <a id="page-4">Other Settings</a> |
+            <a class="themes-selected-tab" id="page-1" page="1" onclick="changePage(1)">Presets and Management</a> |
+            <a id="page-2" page="2" onclick="changePage(2)">Fonts and Images</a> |
+            <a id="page-3" page="3" onclick="changePage(3)">Colour Settings</a> |
+            <a id="page-4" page="4" onclick="changePage(4)">Other Settings</a> |
             </nav>
         <button type="button" id="themesButtonClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
         </header>
         
-        <div class="themes-page" id="themesPageOne">
+        <div class="themes-page" id="themesPage1">
             <aside class="themes-page-side">
             <h4 class="themes-input-header">presets</h4>
             <table class="table-selector" id="themesPresetSelector">
@@ -64,8 +86,35 @@
                 <div class="themes-double-button-con" id="themesLocalSaveClearCon">
                 <h4 class="themes-button-header">local save/clear</h4>
                 <button id="themesLocalSaveButton" class="btn btn-primary">save</button>
-                <button id="themesLocalClearButton" class="btn btn-tertiary">clear</button>
+                <button id="themesLocalClearButton" class="btn btn-secondary">clear</button>
                 </div>                
+            </footer>
+        </div>
+        
+        <div class="themes-hide" id="themesPage2">
+            <aside class="themes-page-side">
+            <h4 class="themes-input-header">fonts</h4>
+            <table class="table-selector" id="themesFontSelector">
+            <tbody>
+                <tr><td>Arial</td></tr>
+                <tr><td>Comic Sans MS</td></tr>
+                <tr><td>Tahoma</td></tr>
+                <tr><td>Ubuntu</td></tr>
+            </tbody>
+            </table>
+            <h4 class="themes-input-header">images</h4>
+            <table class="table-selector" id="themesImagesSelector">
+            <tbody>
+                <tr><td>xp.png</td></tr>
+                <tr><td>vista.jpg</td></tr>
+            </tbody>
+            </table>
+            </aside>
+            
+            <main class="themes-page-main">
+            </main>
+            
+            <footer class="themes-page-footer">
             </footer>
         </div>
     </div>

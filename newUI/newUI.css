@@ -5,8 +5,17 @@ body {
     --navi-text-hl-dark-col: #EA64E0;
     --navi-light-back-col: #5F616C;
     --navi-btn-pri-col: #C043E7;
+    --navi-btn-tri-col: #E945E9;
+    --navi-lighter-back-col: #7A7D8B;
+    --navi-btn-light-pri-col: #D449FF;
+    --navi-btn-light-tri-col: #FF4BFF;
     --navi-font-base: IBM Plex Sans Thin;
     --navi-font-head: IBM Plex Sans Medm;
+}
+
+.themes-hide {
+    display: none;
+    opacity: 0;
 }
 
 .themes-modal {
@@ -86,6 +95,9 @@ body {
     display: inline-block;
     font-size: 14pt;
     flex: 11;
+    width: 14em;
+    overflow: auto;
+    margin-bottom: 0.5em;
 }
 
 .table-selector td {
@@ -93,10 +105,15 @@ body {
 }
 
 #themesPresetSelector {
-    width: 14em;
     height: 27.5em;
-    overflow: auto;
-    margin-bottom: 0.5em;
+}
+
+#themesFontSelector {
+    height: 12em;
+}
+
+#themesImagesSelector {
+    height: 12em;
 }
 
 .themes-input-header {
@@ -135,11 +152,33 @@ body {
     font-family: var(--navi-font-base);
     color: white;
     border: 1px solid black;
+    transition: background-color 0.5s ease-out;
 }
 
 .btn-primary {
     background-color: var(--navi-btn-pri-col);
 }
+
+.btn-primary:hover {
+    background-color: var(--navi-btn-light-pri-col);
+}
+
+.btn-secondary {
+    background-color: var(--navi-light-back-col);
+}
+
+.btn-secondary:hover {
+    background-color: var(--navi-lighter-back-col);
+}
+
+.btn-tertiary {
+    background-color: var(--navi-btn-tri-col);
+}
+
+.btn-tertiary:hover {
+    background-color: var(--navi-btn-light-tri-col);
+}
+
 
 #themesPresetApplyButton {
     width: 12.25em;
