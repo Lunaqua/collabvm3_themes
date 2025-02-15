@@ -1,28 +1,47 @@
+body {
+    --navi-back-col: #454551;
+    --navi-text-col: #D8D9DC;
+    --navi-text-hl-col: #F7DAE3;
+    --navi-text-hl-dark-col: #EA64E0;
+    --navi-light-back-col: #5F616C;
+    --navi-btn-pri-col: #C043E7;
+    --navi-font-base: IBM Plex Sans Thin;
+    --navi-font-head: IBM Plex Sans Medm;
+}
+
 .themes-modal {
     border: 1px solid black;
     width: 62.5em;
     height: 42.5em;
-    background-color: #454551;
-    font-family: IBM Plex Sans Thin;
-    color: #D8D9DC;
+    background-color: var(--navi-back-col);
+    font-family: var(--navi-font-base);
+    color: var(--navi-text-col);
 }
 
 .modal-content {
-    padding: 1.5em;
+    padding: 1em;
 }
 
 .modal-header {
     display: flex;
     flex-direction: row;
-    font-family: IBM Plex Sans Text
+    font-family: var(--navi-font-head);
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--navi-text-col);
 }
 
 .themes-nav {
-    flex: 4;
+    flex: 5;
+    font-size: 16pt;
+}
+
+.themes-selected-tab {
+    color: var(--navi-text-hl-dark-col);
 }
 
 .btn-close {
     flex: 1;
+    max-width: 2em;
 }
 
 .themes-page {
@@ -31,7 +50,7 @@
 }
 
 .themes-page-side {
-    grid-row: 1 / 2;
+    grid-row: 1 / span 2;
     grid-column: 1;
 }
 
@@ -44,4 +63,58 @@
     grid-row: 2;
     grid-column: 2;
     height: 10em;
+}
+
+.table-selector {
+    background-color: var(--navi-light-back-col);
+    border: 2px solid black;
+    display: inline-block;
+    font-size: 14pt;
+}
+
+.table-selector td {
+    padding: 0.15em 0.25em;
+}
+
+#themesPresetSelector {
+    width: 14em;
+    height: 26em;
+    overflow: auto;
+}
+
+.themes-input-header {
+    font-size: 18pt;
+    position: relative;
+    width: auto;
+    text-align: right;
+    top: 0.65em;
+    right: 1.9em;
+    padding: 0;
+    margin: 0;
+}
+
+.themes-preset-unsaved {
+    font-weight: bold;
+}
+
+.themes-preset-local {
+    color: var(--navi-text-hl-col);
+}
+
+.btn {
+    width: 9em;
+    height: 2em;
+    font-size: 16pt;
+    padding: 0;
+    font-family: var(--navi-font-base);
+    color: white;
+    border: 1px solid black;
+}
+
+.btn-primary {
+    background-color: var(--navi-btn-pri-col);
+}
+
+#themesPresetApplyButton {
+    width: 12.25em;
 }
