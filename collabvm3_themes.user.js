@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-14
+// @version      2025-02-15
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -85,7 +85,7 @@ function setProperty(e){
         case "--bs-body-font-size":
             colour = colour + "rem";
             break;
-        case "-backdrop-blur-radius":
+        case "--backdrop-blur-radius":
             colour = colour + "px";
             break;
     }
