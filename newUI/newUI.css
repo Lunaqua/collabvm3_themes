@@ -35,6 +35,12 @@ body {
     font-size: 16pt;
 }
 
+.themes-nav > a:hover {
+    color: var(--navi-text-hl-dark-col);
+    cursor: pointer;
+    transition: color 0.25s ease-out;
+}
+
 .themes-selected-tab {
     color: var(--navi-text-hl-dark-col);
 }
@@ -47,22 +53,31 @@ body {
 .themes-page {
     display: grid;
     grid-template-columns: 18.75em auto;
+    grid-template-rows: auto 15.25em;
 }
 
 .themes-page-side {
     grid-row: 1 / span 2;
     grid-column: 1;
+    border-right: 1px solid var(--navi-text-col);
+    margin-right: 1em;
+    margin-top: 0.25em;
+    display: flex;
+    flex-direction: column;
 }
 
 .themes-page-main {
     grid-row: 1;
     grid-column: 2;
+    margin: 0.25em 0.25em 1em 0;
 }
 
 .themes-page-footer {
     grid-row: 2;
     grid-column: 2;
-    height: 10em;
+    margin-left: auto;
+    margin-right: 0.5em;
+    align-content: flex-end;
 }
 
 .table-selector {
@@ -70,6 +85,7 @@ body {
     border: 2px solid black;
     display: inline-block;
     font-size: 14pt;
+    flex: 11;
 }
 
 .table-selector td {
@@ -78,8 +94,9 @@ body {
 
 #themesPresetSelector {
     width: 14em;
-    height: 26em;
+    height: 27.5em;
     overflow: auto;
+    margin-bottom: 0.5em;
 }
 
 .themes-input-header {
@@ -88,9 +105,18 @@ body {
     width: auto;
     text-align: right;
     top: 0.65em;
-    right: 1.9em;
+    right: 1.2em;
     padding: 0;
     margin: 0;
+}
+
+
+.themes-button-header {
+    font-size: 18pt;
+    width: auto;
+    text-align: right;
+    padding: 0;
+    margin: 0.25em 0.5em;
 }
 
 .themes-preset-unsaved {
@@ -117,4 +143,22 @@ body {
 
 #themesPresetApplyButton {
     width: 12.25em;
+    flex: 1;
+}
+
+.themes-input-box {
+    width: 35.25em;
+    background-color: var(--navi-light-back-col);
+    border: 2px solid black;
+    font-family: var(--navi-font-base);
+    font-size: 14pt;
+    color: var(--navi-text-col);
+    padding-left: 0.4em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+}
+
+.themes-large-input-box {
+    height: 8.5em;
+    resize: none;
 }
