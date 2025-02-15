@@ -125,6 +125,7 @@ body {
     right: 1.2em;
     padding: 0;
     margin: 0;
+    pointer-events: none;
 }
 
 
@@ -200,4 +201,18 @@ body {
 .themes-large-input-box {
     height: 8.5em;
     resize: none;
+}
+
+#themesBaseFontFlex {
+    display: flex;
+    max-width: 42em;
+}
+
+#themesBaseFontSizeInput {
+    flex: 1;
+    margin-right: 1em;
+}
+
+#themesBaseFontInput {
+    flex: 9;
 }
