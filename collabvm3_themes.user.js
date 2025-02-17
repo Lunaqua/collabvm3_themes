@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-15
+// @version      2025-02-17
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -158,7 +158,7 @@ function addThemesModal(){
     document.body.appendChild(themesContainer);
     // Injects the html and adds the modal to the <body> tag.
     
-    let colorisContainer = document.getElementById("themes-body");
+    let colorisContainer = document.getElementById("themesColourValInputCon");
     colorisContainer.classList.toggle("theme-body");
     
     let coloris = document.createElement("input");
@@ -173,9 +173,9 @@ function addThemesModal(){
     // Adds the coloris picker to the modal body.
     // Cannot be added via the injection above for whatever reason.
     
-    const elements = ["backInput", "fontInput", "borderInput",
-    "glowBlurInput", "glowRadiusInput", "fontSizeInput", "headerFontInput",
-        "blurRadiusInput", "cPicker"
+    const elements = ["themesBackImgInput", "themesBaseFontInput", "themesBorderRadiusInput",
+    "themesGlowBlurInput", "themesGlowRadiusInput", "themesBaseFontSizeInput", "themesTitleFontInput",
+        "themesGlowRadiusInput", "cPicker"
     ]
     
     elements.forEach( function(item, index) {
@@ -185,14 +185,14 @@ function addThemesModal(){
     // Adds EventListener's to each of the input fields.
     // Runs setProperty when the input is changed.
     
-    let themeButtonClose = document.getElementById("themeButtonClose");
+    let themeButtonClose = document.getElementById("themesButtonClose");
     themeButtonClose.addEventListener("click", function(e) { showThemesModal(e, "display:none;") });
     
     // Makes the close button work.
     
-    let saveButton = document.getElementById("saveButton");
+    let saveButton = document.getElementById("themesLocalSaveButton");
     saveButton.addEventListener("click", (e) => saveTheme());
-    let clearButton = document.getElementById("clearButton");
+    let clearButton = document.getElementById("themesLocalClearButton");
     clearButton.addEventListener("click", (e) => clearTheme());
 
 }
@@ -210,7 +210,7 @@ function clearColourPicker(cssprop){
 
 // void addColourTable() - Adds the list of selectable elements.
 function addColourTable(){
-    let colourTable = document.getElementById("colourTable");
+    let colourTable = document.getElementById("themesColourSelector");
     // Find the colour picker table.
 
     colourTable.addEventListener("click", (e, coloris) => {
@@ -232,7 +232,7 @@ function addColourTable(){
           let coloris = document.getElementById("cPicker");
           coloris.setAttribute('cssprop', newlySelectedRow.getAttribute("cssprop"));
 
-          document.querySelector('.theme-colour-selector').dispatchEvent(new Event('input', { bubbles: true }));
+          document.querySelector('table-selector').dispatchEvent(new Event('input', { bubbles: true }));
       }
        // Code stolen from https://jdan.github.io/98.css/ to make the table function as a selector
     })
