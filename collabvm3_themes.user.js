@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-17
+// @version      2025-02-17_1
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -150,7 +150,8 @@ function addThemesModal(){
     let themesContainer = document.createElement("div");
     themesContainer.classList.toggle("fade");
     themesContainer.classList.toggle("modal");
-    themesContainer.id = "themes-modal"
+    themesContainer.classList.toggle("themes-modal");
+    themesContainer.id = "themes-modal";
     themesContainer.setAttribute("tabindex", "-1");
     // Creates the div modal to inject the HTML source.
     
