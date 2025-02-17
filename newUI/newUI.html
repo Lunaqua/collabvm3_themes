@@ -155,9 +155,65 @@
         </div>
         
         <div class="themes-hide" id="themesPage3">
+            <aside class="themes-page-side">
+            <h4 class="themes-input-header">elements</h4>
+            <table class="table-selector" id="themesFontSelector">
+            <tbody>
+                <tr cssprop="--bs-body-bg"><td>Background Colour</td></tr>
+                <tr cssprop="--bs-tertiary-bg"><td>Header Background</td></tr>
+                <tr cssprop="--bs-primary-text-emphasis"><td>Primary Button</td></tr>
+                <tr cssprop="--bs-gray-700"><td>Secondary Button</td></tr>
+                <tr cssprop="--bs-primary"><td>Primary Button Hover</td></tr>
+                <tr cssprop="--bs-gray-800"><td>Secondary Button Hover</td></tr>
+                <tr cssprop="--bs-body-color"><td>Text Colour</td></tr>
+                <tr cssprop="--active-user-bg"><td>Active User Back</td></tr>
+                <tr cssprop="--waiting-user-bg"><td>Waiting User Back</td></tr>
+                <tr cssprop="--bs-danger-text-emphasis"><td>Admin Colour</td></tr>
+                <tr cssprop="--bs-warning-text-emphasis"><td>Mod Colour</td></tr>
+                <tr cssprop="--bs-navbar-new-color"><td>Header Text Colour</td></tr>
+                <tr cssprop="--bs-gray-300"><td>Disabled Keyboard Colour</td></tr>
+                <tr cssprop="--bs-info-text-emphasis"><td>Text Highlight Colour</td></tr>
+                <tr cssprop="--bs-border-color"><td>Border Colour</td></tr>
+                <tr cssprop="--glow-colour"><td>Glow Colour</td></tr>
+            </table>
+            </tbody>
+            </aside>
+            
+            <main class="themes-page-main">
+                <div class="themes-input-container" id="themesColourValInputCon"><label for="themesColourValInput"><h4 class="themes-input-header">value</h4></label>
+                <input id="themesColourValInput" class="themes-input-box" type="text" name="themesColourValInput" placeholder=""></input>
+                </div>
+                <div id="themesColBlankCon" class="themes-large-input-container">
+                <textarea id="themesColBlank" class="themes-input-box themes-large-input-box" type="text" name="themesColBlank" disabled="yes"></textarea>
+                </div>
+            </main>
+            
+            <footer class="themes-page-footer">
+                <button id="themesColourResetButton" class="btn btn-secondary">reset</button>
+            </footer>
         </div>
          
         <div class="themes-hide" id="themesPage4">
+            <main class="themes-page-main">
+            <div class="themes-input-container" id="themesBorderRadiusInputCon"><label for="themesBorderRadiusInput"><h4 class="themes-input-header">border-radius</h4></label>
+            <div class="themes-page4-flex">
+                <input class="themes-page4-input" id="themesBorderRadiusInput" class="themes-input-box" type="range" min="0" max="5" step="0.001" value="0.375" name="themesBorderRadiusInput"></input>
+                <input id="themesBorderRadiusDisp" class="themes-input-box" type="text" name="themesBorderRadiusDisp" placeholder="0" disabled="yes"></input>
+            </div>
+            </div>
+            <div class="themes-input-container" id="themesGlowBlurInputCon"><label for="themesGlowBlurInput"><h4 class="themes-input-header">glow blur</h4></label>
+            <div class="themes-page4-flex">
+                <input class="themes-page4-input" id="themesGlowBlurInput" class="themes-input-box" type="range" min="0" max="120" value="0" name="themesGlowBlurInput"></input>
+                <input id="themesGlowBlurDisp" class="themes-input-box" type="text" name="themesGlowBlurDisp" placeholder="0" disabled="yes"></input>
+            </div>
+            </div>
+            <div class="themes-input-container" id="themesGlowRadiusInputCon"><label for="themesGlowRadiusInput"><h4 class="themes-input-header">glow radius</h4></label>
+            <div class="themes-page4-flex">
+                <input class="themes-page4-input" id="themesGlowRadiusInput" class="themes-input-box" type="range" min="0" max="100" value="0" step="0.5" name="themesGlowRadiusInput"></input>
+                <input id="themesGlowRadiusDisp" class="themes-input-box" type="text" name="themesGlowRadiusDisp" placeholder="0" disabled="yes"></input>
+            </div>
+            </div>
+            </main>
         </div>
     </div>
     </div>
