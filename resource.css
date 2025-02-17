@@ -260,15 +260,22 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
 
 .themes-modal {
     border: 1px solid black;
-    width: 62.5em;
-    height: 42.5em;
+    width: 62.5rem;
+    height: 42.5rem;
     background-color: var(--navi-back-col);
     font-family: var(--navi-font-base);
     color: var(--navi-text-col);
 }
 
+@media (width >= 576px) {
+  .modal-dialog {
+      max-width: inherit;
+}
+
 .modal-content {
     padding: 1em;
+    background-color: inherit;
+    border: none;;
 }
 
 .modal-header {

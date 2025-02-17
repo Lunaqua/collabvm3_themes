@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-17_1
+// @version      2025-02-17_2
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -182,6 +182,12 @@ function addThemesModal(){
     elements.forEach( function(item, index) {
         document.getElementById(item).addEventListener('input', function(e) { setProperty(e) })}
     )
+    
+    for (let i=1; i<=4; i++){
+        console.log("page-"+i);
+        let pageTab = document.getElementById("page-"+i);
+        pageTab.addEventListener("click", (e) => changePage(i));
+    }
     
     // Adds EventListener's to each of the input fields.
     // Runs setProperty when the input is changed.
