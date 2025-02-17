@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-17_2
+// @version      2025-02-17_3
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -39,6 +39,21 @@
 // UI Revamp to handle this stuff
 
 // -------------------------------------
+
+function changePage(pageNum) {
+        let cuPage = document.getElementsByClassName("themes-selected-tab")[0];
+        cuPage.classList.toggle("themes-selected-tab");
+        let cuPageDiv = document.getElementById("themesPage"+cuPage.getAttribute("page"));
+        cuPageDiv.classList.toggle("themes-hide");
+        cuPageDiv.classList.toggle("themes-page");
+        
+        let page = document.getElementById("themesPage"+pageNum);
+        page.classList.toggle("themes-hide");
+        page.classList.toggle("themes-page");
+        
+        let selTab = document.getElementById("page-"+pageNum);
+        selTab.classList.toggle("themes-selected-tab");
+    }
 
 // void saveTheme() - Saves css values to localstorage
 // Very simple, but it works for now
