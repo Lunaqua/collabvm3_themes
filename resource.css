@@ -35,6 +35,7 @@ body {
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     backdrop-filter: blur(var(--backdrop-blur-radius));
     --bs-modal-bg: var(--bs-tertiary-bg);
+    overflow: inherit;
 }
 #user-list .turn-active {
 --bs-table-bg:var(--active-user-bg) !important;
@@ -264,6 +265,7 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
     height: 42.5rem;
     background-color: var(--navi-back-col);
     font-family: var(--navi-font-base);
+    font-size: 1em;
     color: var(--navi-text-col);
 }
 
@@ -284,6 +286,10 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
     font-family: var(--navi-font-head);
     padding-bottom: 0.5em;
     border-bottom: 1px solid var(--navi-text-col);
+}
+
+.modal-dialog {
+    margin: inherit;
 }
 
 .themes-nav {
@@ -393,7 +399,7 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
     color: var(--navi-text-hl-col);
 }
 
-.btn {
+.themes-modal .btn {
     width: 9em;
     height: 2em;
     font-size: 16pt;
