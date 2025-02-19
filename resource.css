@@ -6,20 +6,21 @@ body {
     --glow-radius: 0px;
     --glow-blur: 0px;
     --glow-colour: #4c31e0ce;
-    --navi-back-col: #454551;
-    --navi-text-col: #D8D9DC;
-    --navi-text-hl-col: #F7DAE3;
-    --navi-text-hl-dark-col: #EA64E0;
-    --navi-light-back-col: #5F616C;
-    --navi-btn-pri-col: #C043E7;
+    
+    --navi-back-col: /*#454551*/ var(--bs-tertiary-bg);
+    --navi-text-col: /*#D8D9DC*/ var(--bs-body-color);
+    --navi-text-hl-col: /*#F7DAE3*/ var(--bs-info-text-emphasis);
+    --navi-text-hl-dark-col: /*#EA64E0*/ var(--bs-gray-300);
+    --navi-light-back-col: /*#5F616C*/ var(--bs-body-bg);
+    --navi-btn-pri-col: /*#C043E7*/ var(--bs-primary-text-emphasis);
     --navi-btn-tri-col: #E945E9;
     --navi-btn-qua-col: #D54773;
-    --navi-lighter-back-col: #7A7D8B;
-    --navi-btn-light-pri-col: #D449FF;
+    --navi-lighter-back-col: /*#7A7D8B*/ var(--bs-gray-800);
+    --navi-btn-light-pri-col: /*#D449FF*/ var(--bs-primary);
     --navi-btn-light-tri-col: #FF4BFF;
     --navi-btn-light-qua-col: #EF4F81;
-    --navi-font-base: IBM Plex Sans Thin;
-    --navi-font-head: IBM Plex Sans Medm;
+    --navi-font-base: /*IBM Plex Sans Thin*/ var(--bs-body-font-family);
+    --navi-font-head: /*IBM Plex Sans Medm*/ var(--bs-header-font-family);
     background-attachment: fixed;
 }
 :selection {
@@ -265,7 +266,7 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
     height: 42.5rem;
     background-color: var(--navi-back-col);
     font-family: var(--navi-font-base);
-    font-size: 1em;
+    font-size: 1rem;
     color: var(--navi-text-col);
 }
 
