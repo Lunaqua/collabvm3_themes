@@ -415,7 +415,7 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
     transition: background-color 0.5s ease-out;
 }
 
-.btn-primary {
+.themes-modal .btn-primary {
     background-color: var(--navi-btn-pri-col);
     flex: 3;
 }

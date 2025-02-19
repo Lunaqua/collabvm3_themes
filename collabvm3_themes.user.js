@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-17_3
+// @version      2025-02-19
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -191,7 +191,7 @@ function addThemesModal(){
     
     const elements = ["themesBackImgInput", "themesBaseFontInput", "themesBorderRadiusInput",
     "themesGlowBlurInput", "themesGlowRadiusInput", "themesBaseFontSizeInput", "themesTitleFontInput",
-        "themesGlowRadiusInput", "cPicker"
+        "themesGlowRadiusInput", "cPicker", "themesBackBlurInput"
     ]
     
     elements.forEach( function(item, index) {

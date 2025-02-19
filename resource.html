@@ -2,10 +2,10 @@
     <div class="modal-content">
         <header class="modal-header">
             <nav class="themes-nav"> |
-            <a class="themes-selected-tab" id="page-1" page="1" onclick="changePage(1)">Presets and Management</a> |
-            <a id="page-2" page="2" onclick="changePage(2)">Fonts and Images</a> |
-            <a id="page-3" page="3" onclick="changePage(3)">Colour Settings</a> |
-            <a id="page-4" page="4" onclick="changePage(4)">Other Settings</a> |
+            <a class="themes-selected-tab" id="page-1" page="1">Presets and Management</a> |
+            <a id="page-2" page="2">Fonts and Images</a> |
+            <a id="page-3" page="3">Colour Settings</a> |
+            <a id="page-4" page="4">Other Settings</a> |
             </nav>
         <button type="button" id="themesButtonClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </header>
@@ -163,19 +163,19 @@
             <main class="themes-page-main">
             <div class="themes-input-container" id="themesBorderRadiusInputCon"><label for="themesBorderRadiusInput"><h4 class="themes-input-header">border-radius</h4></label>
             <div class="themes-page4-flex">
-                <input class="themes-page4-input" id="themesBorderRadiusInput" class="themes-input-box" type="range" min="0" max="5" step="0.001" value="0.375" name="themesBorderRadiusInput" cssprop="--bs-border-radius"></input>
+                <input class="themes-page4-input themes-input-box" id="themesBorderRadiusInput" type="range" min="0" max="5" step="0.001" value="0.375" name="themesBorderRadiusInput" cssprop="--bs-border-radius"></input>
                 <input id="themesBorderRadiusDisp" class="themes-input-box" type="text" name="themesBorderRadiusDisp" placeholder="0" disabled="yes"></input>
             </div>
             </div>
             <div class="themes-input-container" id="themesGlowBlurInputCon"><label for="themesGlowBlurInput"><h4 class="themes-input-header">glow blur</h4></label>
             <div class="themes-page4-flex">
-                <input class="themes-page4-input" id="themesGlowBlurInput" class="themes-input-box" type="range" min="0" max="120" value="0" name="themesGlowBlurInput" cssprop="--glow-blur"></input>
+                <input class="themes-page4-input themes-input-box" id="themesGlowBlurInput" type="range" min="0" max="120" value="0" name="themesGlowBlurInput" cssprop="--glow-blur"></input>
                 <input id="themesGlowBlurDisp" class="themes-input-box" type="text" name="themesGlowBlurDisp" placeholder="0" disabled="yes"></input>
             </div>
             </div>
             <div class="themes-input-container" id="themesGlowRadiusInputCon"><label for="themesGlowRadiusInput"><h4 class="themes-input-header">glow radius</h4></label>
             <div class="themes-page4-flex">
-                <input class="themes-page4-input" id="themesGlowRadiusInput" class="themes-input-box" type="range" min="0" max="100" value="0" step="0.5" name="themesGlowRadiusInput" cssprop="--glow-radius"></input>
+                <input class="themes-page4-input themes-input-box" id="themesGlowRadiusInput" type="range" min="0" max="100" value="0" step="0.5" name="themesGlowRadiusInput" cssprop="--glow-radius"></input>
                 <input id="themesGlowRadiusDisp" class="themes-input-box" type="text" name="themesGlowRadiusDisp" placeholder="0" disabled="yes" ></input>
             </div>
             </div>
