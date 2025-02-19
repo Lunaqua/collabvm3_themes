@@ -19,7 +19,7 @@
 // background effects (scaling, blur, positioning, blend-mode)
 // Custom layouts
 // theme (n)ovi store
-// A proper flexible responsive themes dialogue.
+// Mobile UI Scaling (media < 500px or whatever)
 
 // Fixes:
 // fix text highlight
@@ -28,15 +28,21 @@
 // persistent font and background inputs
 // clear input validity (:valid)
 // individual reset of colours
-// Make CSS nicer using grid template stuff
+
+// UI Fixes:
+// Fix modal centreing
+// Fix Tab underlining, and colours
+// Fix inconsistent spacing on colours tab
+// Make Colour Picker actually be part of the modal
+// Proper border padding
+// Fully scalable with different fonts borders etc.
 
 // Now:
 // custom padding
-// theme export and import
 // Add preset themes
 // Add font upload
 // Add image upload
-// UI Revamp to handle this stuff
+// theme export and import
 
 // -------------------------------------
 
