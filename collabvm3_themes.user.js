@@ -67,7 +67,9 @@ function resetPreTable(isUnsaved) {
     const preTableCon = document.getElementById("themesPresetSelector");
     // Get the preset table in the modal.
     let preTable = document.createElement("tbody");
-    const themePresets = JSON.parse(localStorage.getItem("themePresets"));
+    const themePresets = localStorage.getItem("themePresets");
+    
+    console.log(themePresets);
     
     themePresets.presets.forEach( function(item, index) {
         if (item.type === 0 && !unsaved) {
