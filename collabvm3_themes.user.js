@@ -70,14 +70,16 @@ function resetPreTable(isUnsaved) {
     const themePresets = JSON.parse(localStorage.getItem("themePresets"));
     
     themePresets.presets.forEach( function(item, index) {
-        if (item.type === 0 && !unsaved) {
+        if (item.type === 0 && !isUnsaved) {
             return
         }
         let newRow = document.createElement("tr");
-        newRow.classList.toggle("themes-preset-"+themePresets.type[item.type]);
+        newRow.classList.toggle("themes-preset-"+themePresets.types[item.type]);
         newRow.innerHTML = "<td>"+item.theme.theme.name+"</td>";
         preTable.appendChild(newRow);
     })
+    
+    preTableCon.appendChild(preTable);
 }
 
 // void saveTheme() - Saves css values to localstorage
