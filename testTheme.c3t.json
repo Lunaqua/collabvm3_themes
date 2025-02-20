@@ -4,10 +4,10 @@
     "theme": {
         "name": "testTheme",
         "author": "Navi",
-        "description": "This is a very good and decent description.",
+        "description": "This is a very good and decent description."
     },
     "css": "--bs-tertiary-bg: #00306189; --bs-primary-text-emphasis: #172f99; --bs-gray-700: #33577a; --bs-primary: #0a0075; --bs-gray-800: #224466; --bs-body-color: #dee2e6; --active-user-bg: #024d4d; --waiting-user-bg: #004708; --bs-danger-text-emphasis: #ea868f; --bs-warning-text-emphasis: #ffda6a; --bs-navbar-new-color: #ffffff; --bs-gray-300: #616161; --bs-info-text-emphasis: #6edff6; --bs-body-font-family: Helvetica Neue LT Pro; background-image: url('https://files.catbox.moe/e43inj.jpg'); --bs-border-radius: 0em; --bs-border-color: #111a54e2; --bs-body-bg: #0706525b; --glow-colour: #4c31e0ce; --glow-blur: 13px; --bs-body-font-size: 0.8rem; --bs-header-font-family: Nokian ; --backdrop-blur-radius: 20px;",
     "image64": "",
     "bfont64": "",
-    "tfont64": "",
+    "tfont64": ""
 }

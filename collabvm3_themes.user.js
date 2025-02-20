@@ -71,7 +71,7 @@ function resetPreTable(isUnsaved) {
     
     themePresets.presets.forEach( function(item, index) {
         if (item.type === 0 && !unsaved) {
-            continue
+            return
         }
         let newRow = document.createElement("tr");
         newRow.classList.toggle("themes-preset-"+themePresets.type[item.type]);
