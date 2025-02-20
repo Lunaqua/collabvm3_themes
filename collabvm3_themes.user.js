@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-19
+// @version      2025-02-20
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
 // @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource.css
 // @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/resource.html
+// @resource defPresets https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/default.json
 // @grant GM_getResourceText
 // ==/UserScript==
 
@@ -42,6 +43,7 @@
 // Add preset themes
 // Add font upload
 // Add image upload
+// Add "modified" marker
 // theme export and import
 
 // -------------------------------------
@@ -60,6 +62,23 @@ function changePage(pageNum) {
         let selTab = document.getElementById("page-"+pageNum);
         selTab.classList.toggle("themes-selected-tab");
     }
+    
+function resetPreTable(isUnsaved) {
+    const preTableCon = document.getElementById("themesPresetSelector");
+    // Get the preset table in the modal.
+    let preTable = document.createElement("tbody");
+    const themePresets = JSON.parse(localStorage.getItem("themePresets"));
+    
+    themePresets.presets.forEach( function(item, index) {
+        if (item.type === 0 && !unsaved) {
+            continue
+        }
+        let newRow = document.createElement("tr");
+        newRow.classList.toggle("themes-preset-"+themePresets.type[item.type]);
+        newRow.innerHTML = "<td>"+item.theme.theme.name+"</td>";
+        preTable.appendChild(newRow);
+    })
+}
 
 // void saveTheme() - Saves css values to localstorage
 // Very simple, but it works for now
@@ -76,11 +95,22 @@ function clearTheme(){
 
 // void loadTheme() - Loads theme from localstorage
 function loadTheme(){
-   if (localStorage.getItem("userStyle")) {
-       let bodyTag = document.getElementsByTagName("body")[0];
-       bodyTag.style.cssText = localStorage.getItem("userStyle");
-       //Quickly sets the style tag on body
-   }
+    // Deprecated local theme
+    if (localStorage.getItem("userStyle")) {
+        let bodyTag = document.getElementsByTagName("body")[0];
+        bodyTag.style.cssText = localStorage.getItem("userStyle");
+        //Quickly sets the style tag on body
+    }
+    
+    if (!localStorage.getItem("themePresets")) {
+        // If empty, load defaults
+        const defPresets = GM_getResourceText("defPresets");
+        localStorage.setItem("themePresets", defPresets);
+        
+    }
+    
+    //Load presets into table
+    resetPreTable(false);
 }
 
 // void setProperty(whatever e) -
