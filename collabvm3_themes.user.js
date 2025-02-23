@@ -89,7 +89,15 @@ function saveTheme(){
 
 // void clearTheme() - Clears any set css.
 function clearTheme(){
-    document.getElementsByTagName("body")[0].style = "";
+    if (confirm("Are you sure?")) {
+        document.getElementsByTagName("body")[0].style = "";
+        
+        document.getElementById("themesNameInput").value = "";
+        document.getElementById("themesAuthorInput").value = "";
+        document.getElementById("themesDescInput").value = "";
+        
+        togglePresetLocks(false);
+    }
 }
 
 // void loadTheme() - Loads theme from localstorage
@@ -307,12 +315,26 @@ function addColourTable(){
     })
 }
 
+function togglePresetLocks(doLock) {
+    if (doLock) {
+        document.getElementById("themesNameInput").disabled = "yes";
+        document.getElementById("themesAuthorInput").disabled = "yes";
+        document.getElementById("themesDescInput").disabled = "yes";
+    } else {
+        document.getElementById("themesNameInput").disabled = "no";
+        document.getElementById("themesAuthorInput").disabled = "no";
+        document.getElementById("themesDescInput").disabled = "no";
+    }
+}
+
 function populatePreset(presetRow, rowNum){
     const selectedPreset = themePresets.presets[rowNum];
     
     document.getElementById("themesNameInput").value = selectedPreset.theme.theme.name;
     document.getElementById("themesAuthorInput").value = selectedPreset.theme.theme.author;
     document.getElementById("themesDescInput").value = selectedPreset.theme.theme.description;
+    
+    togglePresetLocks(true);
 }
 
 function addPresetsTable(){
