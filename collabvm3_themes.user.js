@@ -97,6 +97,7 @@ function clearTheme(){
         document.getElementById("themesDescInput").value = "";
         
         togglePresetLocks(false);
+        toggleUnsaved(false);
     }
 }
 
@@ -121,7 +122,8 @@ function loadTheme(){
 }
 
 function applySelectedTheme(){
-    const selThem = document.getElementById("themes-selected-preset").rowIndex + 1;
+    let i = document.getElementsByClassName("themes-preset-unsaved").length === 0 ? 1 : 0;
+    const selThem = document.getElementById("themes-selected-preset").rowIndex + i;
     const themeCss = themePresets.presets[selThem].theme.css;
     const bodyTag = document.getElementsByTagName("body")[0];
     bodyTag.style.cssText = themeCss;
@@ -312,7 +314,7 @@ function addColourTable(){
         if (document.getElementById("themesNameInput").value) {
             document.getElementById("themesNameInput").value += " (modified)"
         } else {
-            enableUnsaved()
+            toggleUnsaved(true)
         }
         //document.querySelector('themesPresetSelector').dispatchEvent(new Event('input', { bubbles: true }));
     }
@@ -320,9 +322,15 @@ function addColourTable(){
     })
 }
 
-function enableUnsaved() {
-    resetPreTable(true);
-    document.getElementById("themes-selected-preset").classList.toggle("highlighted");
+function toggleUnsaved(isUnsaved) {
+    if (isUnsaved) {
+        resetPreTable(true);
+        document.getElementById("themesPresetSelector").firstChild.firstChild.classList.toggle("highlighted");
+        document.getElementById("themes-selected-preset").classList.toggle("highlighted");
+    } else {
+        resetPreTable(false);
+        document.getElementById("themes-selected-preset").classList.toggle("highlighted");
+    }
 }
 
 function togglePresetLocks(doLock) {
@@ -361,8 +369,8 @@ function addPresetsTable(){
         
         if (newlySelectedRow) {
             newlySelectedRow.classList.toggle(highlightedClass);
-            
-            populatePreset(newlySelectedRow, newlySelectedRow.rowIndex + 1);
+            let i = document.getElementsByClassName("themes-preset-unsaved").length === 0 ? 1 : 0;
+            populatePreset(newlySelectedRow, newlySelectedRow.rowIndex + i );
             newlySelectedRow.id = "themes-selected-preset";
         }
     })
@@ -379,5 +387,5 @@ function main(){
     
 }
 
-const themePresets = JSON.parse(localStorage.getItem("themePresets"));
+let themePresets = JSON.parse(localStorage.getItem("themePresets"));
 main()
