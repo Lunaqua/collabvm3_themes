@@ -84,9 +84,7 @@ function resetPreTable(isUnsaved) {
 // void saveTheme() - Saves css values to localstorage
 // Very simple, but it works for now
 function saveTheme(){
-    let userStyle = document.getElementsByTagName("body")[0].style.cssText;
-    console.log(userStyle);
-    localStorage.setItem("userStyle", userStyle);
+    console.log("No way!")
 }
 
 // void clearTheme() - Clears any set css.
@@ -96,7 +94,7 @@ function clearTheme(){
 
 // void loadTheme() - Loads theme from localstorage
 function loadTheme(){
-    // Deprecated local theme
+    // Default theme
     if (localStorage.getItem("userStyle")) {
         let bodyTag = document.getElementsByTagName("body")[0];
         bodyTag.style.cssText = localStorage.getItem("userStyle");
@@ -119,6 +117,10 @@ function applySelectedTheme(){
     const themeCss = themePresets.presets[selThem].theme.css;
     const bodyTag = document.getElementsByTagName("body")[0];
     bodyTag.style.cssText = themeCss;
+    
+    if (document.getElementById("themesDefaultButton").value){
+        localStorage.setItem("userStyle", themeCss);
+    }
 }
 
 // void setProperty(whatever e) -
