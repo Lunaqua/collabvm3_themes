@@ -78,7 +78,7 @@ function resetPreTable(isUnsaved) {
         preTable.appendChild(newRow);
     })
     
-    preTableCon.appendChild(preTable);
+    preTableCon.replaceChildren(preTable);
 }
 
 // void saveTheme() - Saves css values to localstorage
@@ -293,26 +293,36 @@ function addColourTable(){
     // Find the colour picker table.
 
     colourTable.addEventListener("click", (e, coloris) => {
-      const highlightedClass = "highlighted";
-      const isRow = element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
-      const newlySelectedRow = e.composedPath().find(isRow);
-      const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
-      if(previouslySelectedRow){
-          previouslySelectedRow.classList.toggle(highlightedClass);
-      }
+    const highlightedClass = "highlighted";
+    const isRow = element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
+    const newlySelectedRow = e.composedPath().find(isRow);
+    const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
+    if(previouslySelectedRow){
+        previouslySelectedRow.classList.toggle(highlightedClass);
+    }
 
-      if (newlySelectedRow) {
-          newlySelectedRow.classList.toggle(highlightedClass);
+    if (newlySelectedRow) {
+        newlySelectedRow.classList.toggle(highlightedClass);
+        clearColourPicker(newlySelectedRow.getAttribute("cssprop"));
 
-          clearColourPicker(newlySelectedRow.getAttribute("cssprop"));
+        let coloris = document.getElementById("cPicker");
+        coloris.setAttribute('cssprop', newlySelectedRow.getAttribute("cssprop"));
 
-          let coloris = document.getElementById("cPicker");
-          coloris.setAttribute('cssprop', newlySelectedRow.getAttribute("cssprop"));
-
-          document.querySelector('table-selector').dispatchEvent(new Event('input', { bubbles: true }));
-      }
-       // Code stolen from https://jdan.github.io/98.css/ to make the table function as a selector
+        togglePresetLocks(false);
+        if (document.getElementById("themesNameInput").value) {
+            document.getElementById("themesNameInput").value += " (modified)"
+        } else {
+            enableUnsaved()
+        }
+        //document.querySelector('themesPresetSelector').dispatchEvent(new Event('input', { bubbles: true }));
+    }
+    // Code stolen from https://jdan.github.io/98.css/ to make the table function as a selector
     })
+}
+
+function enableUnsaved() {
+    resetPreTable(true);
+    document.getElementById("themes-selected-preset").classList.toggle("highlighted");
 }
 
 function togglePresetLocks(doLock) {
@@ -321,9 +331,9 @@ function togglePresetLocks(doLock) {
         document.getElementById("themesAuthorInput").disabled = "yes";
         document.getElementById("themesDescInput").disabled = "yes";
     } else {
-        document.getElementById("themesNameInput").disabled = "no";
-        document.getElementById("themesAuthorInput").disabled = "no";
-        document.getElementById("themesDescInput").disabled = "no";
+        document.getElementById("themesNameInput").removeAttribute("disabled");
+        document.getElementById("themesAuthorInput").removeAttribute("disabled");
+        document.getElementById("themesDescInput").removeAttribute("disabled");
     }
 }
 
