@@ -363,6 +363,10 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
     padding: 0.15em 0.25em;
 }
 
+.highlightedClass {
+    background-color: var(--bs-primary);
+}
+
 #themesPresetSelector {
     height: 27.5em;
 }

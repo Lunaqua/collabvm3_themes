@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-20
+// @version      2025-02-23
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -280,12 +280,10 @@ function addColourTable(){
       const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
       if(previouslySelectedRow){
           previouslySelectedRow.classList.toggle(highlightedClass);
-          previouslySelectedRow.style = "background-color: inherit";
       }
 
       if (newlySelectedRow) {
           newlySelectedRow.classList.toggle(highlightedClass);
-          newlySelectedRow.style = "background-color: var(--bs-primary)";
 
           clearColourPicker(newlySelectedRow.getAttribute("cssprop"));
 
@@ -295,6 +293,23 @@ function addColourTable(){
           document.querySelector('table-selector').dispatchEvent(new Event('input', { bubbles: true }));
       }
        // Code stolen from https://jdan.github.io/98.css/ to make the table function as a selector
+    })
+}
+
+function addPresetsTable(){
+    const preTab = document.getElementById("themesPresetSelector");
+    preTab.addEventListener("click", (e) => {
+        const highlightedClass = "highlighted";
+        const isRow = element => element.tagName === "TR" && element.parentElement.tagName === "tbody";
+        const newlySelectedRow = e.composedPath().find(isRow);
+        const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
+        if (previouslySelectedRow){
+            previouslySelectedRow.classList.toggle(highlightedClass);
+        }
+        
+        if (newlySelectedRow) {
+            newlySelectedRow.classList.toggle(highlightedClass);
+        }
     })
 }
 
