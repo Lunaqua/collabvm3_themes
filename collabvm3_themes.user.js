@@ -300,9 +300,9 @@ function populatePreset(presetRow, rowNum){
     const themePresets = JSON.parse(localStorage.getItem("themePresets"));
     const selectedPreset = themePresets.presets[rowNum];
     
-    document.getElementById("themesNameInput").setAttribute("value", selectedPreset.theme.theme.name);
-    document.getElementById("themesAuthorInput").setAttribute("value", selectedPreset.theme.theme.author);
-    document.getElementById("themesDescInput").setAttribute("value", selectedPreset.theme.theme.description);
+    document.getElementById("themesNameInput").value = selectedPreset.theme.theme.name;
+    document.getElementById("themesAuthorInput").value = selectedPreset.theme.theme.author;
+    document.getElementById("themesDescInput").value = selectedPreset.theme.theme.description;
 }
 
 function addPresetsTable(){
@@ -319,7 +319,7 @@ function addPresetsTable(){
         if (newlySelectedRow) {
             newlySelectedRow.classList.toggle(highlightedClass);
             
-            populatePreset(newlySelectedRow, newlySelectedRow.parentNode.rowIndex);
+            populatePreset(newlySelectedRow, newlySelectedRow.rowIndex + 1);
         }
     })
 }
