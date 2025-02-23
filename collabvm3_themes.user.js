@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-23_1
+// @version      2025-02-23_2
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -67,7 +67,6 @@ function resetPreTable(isUnsaved) {
     const preTableCon = document.getElementById("themesPresetSelector");
     // Get the preset table in the modal.
     let preTable = document.createElement("tbody");
-    const themePresets = JSON.parse(localStorage.getItem("themePresets"));
     
     themePresets.presets.forEach( function(item, index) {
         if (item.type === 0 && !isUnsaved) {
@@ -113,6 +112,13 @@ function loadTheme(){
     
     //Load presets into table
     resetPreTable(false);
+}
+
+function applySelectedTheme(){
+    const selThem = document.getElementById("themes-selected-preset").rowIndex + 1;
+    const themeCss = themePresets.presets[selThem].theme.css;
+    const bodyTag = document.getElementsByTagName("body")[0];
+    bodyTag.style.cssText = themeCss;
 }
 
 // void setProperty(whatever e) -
@@ -254,6 +260,9 @@ function addThemesModal(){
     saveButton.addEventListener("click", (e) => saveTheme());
     let clearButton = document.getElementById("themesLocalClearButton");
     clearButton.addEventListener("click", (e) => clearTheme());
+    
+    let applyButton = document.getElementById("themesPresetApplyButton");
+    applyButton.addEventListener("click", function(e) { applySelectedTheme(); })
 
 }
 
@@ -297,7 +306,6 @@ function addColourTable(){
 }
 
 function populatePreset(presetRow, rowNum){
-    const themePresets = JSON.parse(localStorage.getItem("themePresets"));
     const selectedPreset = themePresets.presets[rowNum];
     
     document.getElementById("themesNameInput").value = selectedPreset.theme.theme.name;
@@ -314,12 +322,14 @@ function addPresetsTable(){
         const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
         if (previouslySelectedRow){
             previouslySelectedRow.classList.toggle(highlightedClass);
+            previouslySelectedRow.removeAttribute('id');
         }
         
         if (newlySelectedRow) {
             newlySelectedRow.classList.toggle(highlightedClass);
             
             populatePreset(newlySelectedRow, newlySelectedRow.rowIndex + 1);
+            newlySelectedRow.id = "themes-selected-preset";
         }
     })
 }
@@ -335,4 +345,5 @@ function main(){
     
 }
 
+const themePresets = JSON.parse(localStorage.getItem("themePresets"));
 main()
