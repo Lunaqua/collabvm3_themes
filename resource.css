@@ -353,8 +353,8 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
     border: 2px solid black;
     display: inline-block;
     font-size: 14pt;
-    flex: 11;
-    width: 14em;
+    flex: 10;
+    width: 17.5rem;
     overflow: auto;
     margin-bottom: 0.5em;
 }
@@ -368,7 +368,29 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
 }
 
 #themesPresetSelector {
-    height: 27.5em;
+    height: 31.5em;
+}
+
+#themesDefaultButtonCon {
+    display: inline-flex;
+    width: 17.5em;
+    flex:1;
+    margin: 0.25em;
+}
+
+#themesDefaultButton {
+    flex: 2;
+    max-width:1.75em;
+}
+
+#themesDefaultLabel {
+    height: 1em;
+    align-self: center;
+    margin-left: 1em;
+}
+
+#themesDefaultLabel > h4 {
+    margin: unset;
 }
 
 #themesFontSelector {
@@ -455,7 +477,7 @@ backdrop-filter: blur(var(--backdrop-blur-radius));
 
 
 #themesPresetApplyButton {
-    width: 12.25em;
+    width: 17.5rem;
     flex: 1;
 }
 
