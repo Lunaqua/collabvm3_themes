@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-23
+// @version      2025-02-23_1
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -296,11 +296,20 @@ function addColourTable(){
     })
 }
 
+function populatePreset(presetRow, rowNum){
+    const themePresets = JSON.parse(localStorage.getItem("themePresets"));
+    const selectedPreset = themePresets.presets[rowNum];
+    
+    document.getElementById("themesNameInput").setAttribute("value", selectedPreset.theme.theme.name);
+    document.getElementById("themesAuthorInput").setAttribute("value", selectedPreset.theme.theme.author);
+    document.getElementById("themesDescInput").setAttribute("value", selectedPreset.theme.theme.description);
+}
+
 function addPresetsTable(){
     const preTab = document.getElementById("themesPresetSelector");
     preTab.addEventListener("click", (e) => {
         const highlightedClass = "highlighted";
-        const isRow = element => element.tagName === "TR" && element.parentElement.tagName === "tbody";
+        const isRow = element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
         const newlySelectedRow = e.composedPath().find(isRow);
         const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
         if (previouslySelectedRow){
@@ -309,6 +318,8 @@ function addPresetsTable(){
         
         if (newlySelectedRow) {
             newlySelectedRow.classList.toggle(highlightedClass);
+            
+            populatePreset(newlySelectedRow, newlySelectedRow.parentNode.rowIndex);
         }
     })
 }
@@ -318,6 +329,7 @@ function main(){
     addThemesModal(); // Add the HTML resource
     addThemesEntry(); // Adds the entry to the dropdown
     addColourTable(); // Add colour table functionality
+    addPresetsTable();
     setUserColours(); // Add the CSS Resource
     loadTheme(); // Load stored user theme
     
