@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-07_2
+// @version      2025-03-07_3
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -41,6 +41,7 @@
 
 // Now:
 // custom padding
+// preset deletion
 // Code cleanup x2
 // Ensure preset themes can be update independently.
 // Add preset themes
@@ -88,7 +89,25 @@ function resetPreTable(isUnsaved) {
 // void saveTheme() - Saves css values to localstorage
 // Very simple, but it works for now
 function saveTheme(){
-    console.log("No way!")
+    const themeName = document.getElementById("themesNameInput").value;
+    // Check whether theme has been modified
+    if (!document.getElementsByTagName("body")[0].style) {
+        alert("save... nothing?");
+        return;
+    }
+    // "" "" name has been modified
+    if (!themeName) {
+        alert("go on, give it a name!");
+        return;
+    }
+    // "" "" "" is not existing.
+    if ( (themeName) => {for ( i in themePresets.presets) { if (themeName === i.theme.theme.name) {return true} }; return false} ) {
+        alert("that already exists..")
+        return;
+    }
+    
+    console.log("Do save thing!!")
+    // Insert into themePresets
 }
 
 // void clearTheme() - Clears any set css.
