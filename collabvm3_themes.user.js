@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-07_3
+// @version      2025-03-07_4
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -91,7 +91,7 @@ function resetPreTable(isUnsaved) {
 function saveTheme(){
     const themeName = document.getElementById("themesNameInput").value;
     // Check whether theme has been modified
-    if (!document.getElementsByTagName("body")[0].style) {
+    if (!document.getElementsByTagName("body")[0].style[0]) {
         alert("save... nothing?");
         return;
     }
@@ -101,7 +101,8 @@ function saveTheme(){
         return;
     }
     // "" "" "" is not existing.
-    if ( (themeName) => {for ( i in themePresets.presets) { if (themeName === i.theme.theme.name) {return true} }; return false} ) {
+    console.log(themeName);
+    if ( themePresets.presets.find((elm) => elm.theme.theme.name === themeName)) {
         alert("that already exists..")
         return;
     }
