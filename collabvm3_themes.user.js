@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-02-23_5
+// @version      2025-03-07_2
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -37,14 +37,18 @@
 // Make Colour Picker actually be part of the modal
 // Proper border padding
 // Fully scalable with different fonts borders etc.
+// Prevent changing from unsaved theme.
 
 // Now:
 // custom padding
+// Code cleanup x2
+// Ensure preset themes can be update independently.
 // Add preset themes
 // Add font upload
 // Add image upload
-// Add "modified" marker
+// Add "modified"/"unsaved" marker
 // theme export and import
+// proper preset saving
 
 // -------------------------------------
 
@@ -131,6 +135,8 @@ function applySelectedTheme(){
     if (document.getElementById("themesDefaultButton").value){
         localStorage.setItem("userStyle", themeCss);
     }
+    
+    localStorage.setItem("currentTheme", themePresets.presets[selThem].theme.theme.name);
 }
 
 // void setProperty(whatever e) -
@@ -311,11 +317,13 @@ function addColourTable(){
         coloris.setAttribute('cssprop', newlySelectedRow.getAttribute("cssprop"));
 
         togglePresetLocks(false);
-        if (document.getElementById("themesNameInput").value) {
-            document.getElementById("themesNameInput").value += " (modified)"
+        const currentName = document.getElementById("themesNameInput").value;
+        /*if (currentName === localStorage.getItem("currentTheme")) {
+            document.getElementById("themesNameInput").value += " (modified)";
         } else {
-            toggleUnsaved(true)
-        }
+            toggleUnsaved(true);
+        }*/
+        // Implement properly later.
         //document.querySelector('themesPresetSelector').dispatchEvent(new Event('input', { bubbles: true }));
     }
     // Code stolen from https://jdan.github.io/98.css/ to make the table function as a selector
