@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-07_4
+// @version      2025-03-10_1
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -18,7 +18,7 @@
 // Custom chat sound
 // dakrk style chat pinging
 // background effects (scaling, blur, positioning, blend-mode)
-// Custom layouts
+// Custom layoutsa
 // theme (n)ovi store
 // Mobile UI Scaling (media < 500px or whatever)
 
@@ -49,7 +49,6 @@
 // Add image upload
 // Add "modified"/"unsaved" marker
 // theme export and import
-// proper preset saving
 
 // -------------------------------------
 
@@ -101,14 +100,24 @@ function saveTheme(){
         return;
     }
     // "" "" "" is not existing.
-    console.log(themeName);
     if ( themePresets.presets.find((elm) => elm.theme.theme.name === themeName)) {
-        alert("that already exists..")
+        alert("that already exists..");
         return;
     }
     
-    console.log("Do save thing!!")
-    // Insert into themePresets
+    console.log("Do save thing!!");
+    let newTheme = structuredClone(themePresets.presets[0]);
+    
+    newTheme.type = 3;
+    newTheme.theme.theme.name = document.getElementById("themesNameInput").value;
+    newTheme.theme.theme.author = document.getElementById("themesAuthorInput").value;
+    newTheme.theme.theme.description = document.getElementById("themesDescInput").value;
+    newTheme.theme.css = document.getElementsByTagName("body")[0].getAttribute("style");
+    
+    themePresets.presets.push(newTheme);
+    localStorage.setItem("themePresets", JSON.stringify(themePresets));
+    
+    resetPreTable(false);
 }
 
 // void clearTheme() - Clears any set css.
