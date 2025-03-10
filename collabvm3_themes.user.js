@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-10_1
+// @version      2025-03-10_2
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -48,7 +48,9 @@
 // Add font upload
 // Add image upload
 // Add "modified"/"unsaved" marker
-// theme export and import
+// Stop it always setting as default.
+// theme import
+// actually set the filename for the theme (will be a pain I think)
 
 // -------------------------------------
 
@@ -152,6 +154,22 @@ function loadTheme(){
     
     //Load presets into table
     resetPreTable(false);
+}
+
+function exportTheme(){
+    let i = document.getElementsByClassName("themes-preset-unsaved").length === 0 ? 1 : 0;
+    const selThem = document.getElementById("themes-selected-preset").rowIndex + i;
+    if (!selThem) {
+        alert("Export.. nothing?");
+    }
+    // This doesn't work yet, I guess cos the function fails.. oops.
+    const exportText = JSON.stringify(themePresets.presets[selThem].theme);
+    const blob = new Blob([exportText], { type: "application/json" });
+    
+    var blobUrl = URL.createObjectURL(blob);
+    window.location.replace(blobUrl);
+    // Kinda hacky, requires another click, at least on firefox.
+    
 }
 
 function applySelectedTheme(){
@@ -310,6 +328,9 @@ function addThemesModal(){
     
     let applyButton = document.getElementById("themesPresetApplyButton");
     applyButton.addEventListener("click", function(e) { applySelectedTheme(); })
+    
+    let exportButton = document.getElementById("themesFileExportButton");
+    exportButton.addEventListener("click", (e) => exportTheme());
 
 }
 
