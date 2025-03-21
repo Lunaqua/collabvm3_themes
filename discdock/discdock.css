@@ -8,6 +8,9 @@
     bottom: 30em !important;
 }
 
+#vmview {
+    margin-bottom: 3em;
+}
 .dock-tab-container {
     height: 2.25em !important;
 }
@@ -95,9 +98,17 @@
     overflow: auto;
 }
 
-.disc-dock-list h2 {
+.disc-dock-list th {
     border-bottom: 1px solid white;
     margin: 0.1em 0.2em 0.3em 0.2em;
     padding-bottom: 0.25em;
     font-size: 1.5em;
+}
+
+.disc-dock-table {
+    display: inline-block;
+}
+
+.highlighted {
+    background-color: var(--bs-primary);
 }
