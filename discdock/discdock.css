@@ -49,15 +49,29 @@
     width: auto;
 }
 
+.disc-dock-header > p {
+    margin: 0.5em;
+}
+
 .disc-content-con {
     display: flex;
 }
 
 .disc-dock-info {
-    flex-basis: 20%;
+    flex-basis: 15%;
     flex-shrink: 5;
     display: flex;
     flex-direction: column;
+}
+
+.disc-dock-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.disc-dock-info-text h2 {
+    font-size: 1.5em;
 }
 
 .disc-dock-img-con {
@@ -70,10 +84,17 @@
     background-color: white;
     border-radius: 8px;
     
-    --dock-img-size: 15vw;
+    --dock-img-size: 12.5vw;
 }
 
 .disc-dock-list {
     flex-basis: 80%;
-    
+    overflow: auto;
+}
+
+.disc-dock-list h2 {
+    border-bottom: 1px solid white;
+    margin: 0.1em 0.2em 0.3em 0.2em;
+    padding-bottom: 0.25em;
+    font-size: 1.5em;
 }
