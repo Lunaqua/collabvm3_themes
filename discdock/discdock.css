@@ -4,6 +4,10 @@
     display: none !important;
 }
 
+.move-tab {
+    bottom: 30em !important;
+}
+
 .dock-tab-container {
     height: 2.25em !important;
 }
