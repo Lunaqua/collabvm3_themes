@@ -1,16 +1,21 @@
 /* CSS Required for CollabVM Disc Dock */
 
-.dock-tab {
-    width:auto;
-    height: 1rem;
-    position: absolute;
+.dock-tab-container {
+    width: fit-content;
+    height: auto;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     
+    display: flex;
+    justify-content: center;
+    gap: 0.25em;
+}
+
+.dock-tab {
     background-color: var(--bs-gray-700);
     color: var(--bs-body-color);
-    
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
