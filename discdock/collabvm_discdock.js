@@ -27,6 +27,7 @@ function createDockTab(){
     let dockTab = document.createElement("div");
     const bodyTag = document.getElementsByTagName("body")[0];
     dockTab.id="discDockTabContainer";
+    dockTab.classList.toggle("dock-container");
     dockTab.classList.toggle("dock-tab-container");
 
     dockTab.innerHTML = '<div id="discImageTab" class="dock-tab"><p>Disc Images</p></div>';
@@ -41,12 +42,14 @@ function createDock(){
     dockContainer.classList.toggle("hidden");
     
     dockContainer.innerHTML = dockContents;
-    document.getElementById("discImageTabContainer").appendChild(dockContainer);
+    document.getElementById("discDockTabContainer").appendChild(dockContainer);
 }
 
 function main(){
-    createDockTab();
     loadCss();
+    createDockTab();
+    createDock();
+    
 }
 
 main();

@@ -7,14 +7,6 @@
 .dock-tab-container {
     width: auto;
     height: 2.25em;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-    display: flex;
-    justify-content: center;
-    gap: 0.25em;
 }
 
 .dock-tab {
@@ -34,10 +26,21 @@
 .dock-container {
     width: 30rem;
     height: 30rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     
+    display: flex;
+    justify-content: center;
+    gap: 0.25em;
+}
+
+.disc-dock {
     background-color: var(--bs-tertiary-bg);
     border-top-left-radius: var(--bs-border-radius, 3px);
     border-top-right-radius: var(--bs-border-radius, 3px);
+    
 }
 
 .disc-dock-header {
