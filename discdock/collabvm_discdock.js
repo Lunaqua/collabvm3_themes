@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      1.0.0
+// @version      2025-03-21_2
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -24,13 +24,24 @@ function loadCss(){
 }
     
 function createDockTab(){
-    const dockTab = document.createElement("div");
+    let dockTab = document.createElement("div");
     const bodyTag = document.getElementsByTagName("body")[0];
-    dockTab.id="discImageTabContainer";
+    dockTab.id="discDockTabContainer";
     dockTab.classList.toggle("dock-tab-container");
 
     dockTab.innerHTML = '<div id="discImageTab" class="dock-tab"><p>Disc Images</p></div>';
     bodyTag.appendChild(dockTab);
+}
+
+function createDock(){
+    const dockContents = GM_getResourceText("htmlInject");
+    let dockContainer = document.createElement("div");
+    dockContainer.id="discImageDockContainer";
+    dockContainer.classList.toggle("dock-container");
+    dockContainer.classList.toggle("hidden");
+    
+    dockContainer.innerHTML = dockContents;
+    document.getElementById("discImageTabContainer").appendChild(dockContainer);
 }
 
 function main(){

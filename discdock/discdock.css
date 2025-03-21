@@ -1,8 +1,12 @@
 /* CSS Required for CollabVM Disc Dock */
 
+.hidden {
+    display: none;
+}
+
 .dock-tab-container {
-    width: fit-content;
-    height: auto;
+    width: auto;
+    height: 2.25em;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -15,11 +19,28 @@
 
 .dock-tab {
     background-color: var(--bs-gray-700);
-    color: var(--bs-body-color);
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    color: var(--bs-body-color, white);
+    border-top-left-radius: var(--bs-border-radius, 3px);
+    border-top-right-radius: var(--bs-border-radius, 3px);
+    
+    padding: 0 0.5em;
+    pointer-events: none;
 }
 
 .dock-tab:hover {
     background-color: var(--bs-gray-800);
+}
+
+.dock-container {
+    width: 30rem;
+    height: 30rem;
+    
+    background-color: var(--bs-tertiary-bg);
+    border-top-left-radius: var(--bs-border-radius, 3px);
+    border-top-right-radius: var(--bs-border-radius, 3px);
+}
+
+.disc-dock-header {
+    border-bottom: 1px solid black;
+    width: auto;
 }
