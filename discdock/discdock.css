@@ -55,21 +55,25 @@
 
 .disc-dock-info {
     flex-basis: 20%;
-    flex-shrink: 4;
+    flex-shrink: 5;
     display: flex;
     flex-direction: column;
 }
 
 .disc-dock-img-con {
-    width: 10em;
-    height: 10em;
+    width: var(--dock-img-size);
+    height: var(--dock-img-size);
     
     min-width: 4em;
     min-height: 4em;
+    
+    background-color: white;
+    border-radius: 8px;
+    
+    --dock-img-size: 15vw;
 }
 
 .disc-dock-list {
     flex-basis: 80%;
-    flex-shrink: 1;
     
 }
