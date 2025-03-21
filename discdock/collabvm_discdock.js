@@ -75,7 +75,7 @@ function createDock(){
 
 function populateDock(discImages){
     const tBody = document.getElementById("discDockTableBody");
-    let cats = set();
+    let cats = new set();
     discImages.forEach( (item, index) => cats.add(item.cat));
     cats = Array.from(cats).sort();
     

@@ -5,7 +5,7 @@
         "cat": "Windows Operating Systems",
         "repo": "isos",
         "link": "windows/Win95 OSR2.ISO",
-        "img": "https://archive.org/download/microsoft-windows-95-osr-2.1-oem/win95-osr21.jpg",
+        "img": "https://archive.org/download/microsoft-windows-95-osr-2.1-oem/win95-osr21.jpg"
     },
     {
         "name": "Windows 7 (SP1) (amd64)",
@@ -13,7 +13,7 @@
         "cat": "Windows Operating Systems",
         "repo": "isos",
         "link": "windows/Windows 7 SP1 x64.iso",
-        "img": "https://archive.org/download/Win7UltimateRTMx64/Microsoft_GLC_00736_Windows_7_Ultimate_64_bit_654853.jpg",
+        "img": "https://archive.org/download/Win7UltimateRTMx64/Microsoft_GLC_00736_Windows_7_Ultimate_64_bit_654853.jpg"
     },
     {
         "name": "Debian 12.9.0 (bookworm) (amd64) (netinst)",
