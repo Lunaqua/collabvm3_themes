@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-21_8
+// @version      2025-03-21_9
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -56,7 +56,7 @@ function createDock(){
     document.getElementById("discDockTabContainer").appendChild(dockContainer);
     
     const preTab = document.getElementById("discDockTable");
-    preTab.addEventListener("click", (e) => {
+    preTab.addEventListener("click", (e, discImages) => {
         const highlightedClass = "highlighted";
         const isRow = element => element.firstChild.tagName === 'TD' && element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
         const newlySelectedRow = e.composedPath().find(isRow);
@@ -69,6 +69,8 @@ function createDock(){
         if (newlySelectedRow) {
             newlySelectedRow.classList.toggle(highlightedClass);
             newlySelectedRow.id = "selected-disc";
+            
+            populateDesc(newlySelectedRow, discImages);
         }
     })
 }
@@ -84,8 +86,17 @@ function populateDock(discImages){
     
     discImages.forEach( function(item, index){
         const i = cats.findIndex(element => element === item.cat);
-        this[i].parentElement.insertAdjacentElement("afterend", Object.assign(document.createElement("tr"),{innerHTML: '<td>'+item.name+'</td>'}));
+        this[i].parentElement.insertAdjacentElement("afterend", Object.assign(document.createElement("tr"),{innerHTML: '<td imageid="'+index+'">'+item.name+'</td>'}));
     }, headings)
+}
+
+function populateDesc(row, discImages){
+    const imageid = row.firstChild.getAttribute("imageid");
+    const image = discImages[imageid];
+    
+    document.getElementById("discDockImg").setAttribute("src", image.img);
+    document.getElementById("discTitle").value = image.name;
+    document.getElementById("discDesc").value = image.desc;
 }
 
 function main(){
@@ -93,7 +104,7 @@ function main(){
     
     loadCss();
     createDockTab();
-    createDock();
+    createDock(discImages);
     populateDock(discImages);
 }
 
