@@ -167,7 +167,7 @@ function exportTheme(){
     const blob = new Blob([exportText], { type: "application/json" });
     
     var blobUrl = URL.createObjectURL(blob);
-    window.location.replace(blobUrl);
+    window.open(blobUrl, '_blank');
     // Kinda hacky, requires another click, at least on firefox.
     
 }
