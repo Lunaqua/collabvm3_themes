@@ -57,7 +57,7 @@ function createDock(){
     const preTab = document.getElementById("discDockTable");
     preTab.addEventListener("click", (e) => {
         const highlightedClass = "highlighted";
-        const isRow = element => element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
+        const isRow = element => element.firstChild.tagName === 'TD' && element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
         const newlySelectedRow = e.composedPath().find(isRow);
         const previouslySelectedRow = Array.from(newlySelectedRow.parentElement.children).filter(isRow).find(element => element.classList.contains(highlightedClass));
         if (previouslySelectedRow){
