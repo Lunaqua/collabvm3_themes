@@ -53,10 +53,15 @@
 .disc-dock-header {
     border-bottom: 1px solid black;
     width: auto;
+    display: flex;
 }
 
 .disc-dock-header > p {
     margin: 0.5em;
+}
+
+.disc-dock-btn {
+    margin-left: auto;
 }
 
 .disc-content-con {
@@ -80,7 +85,7 @@
     font-size: 1.5em;
 }
 
-.disc-dock-img-con {
+.disc-dock-img {
     width: var(--dock-img-size);
     height: var(--dock-img-size);
     
@@ -91,6 +96,7 @@
     border-radius: 8px;
     
     --dock-img-size: 12.5vw;
+    object-fit: contain;
 }
 
 .disc-dock-list {

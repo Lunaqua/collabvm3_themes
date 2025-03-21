@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-21_9
+// @version      2025-03-21_10
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -45,7 +45,7 @@ function createDockTab(){
     document.getElementById("discImageTab").addEventListener('click', function(e) { toggleDock(); });
 }
 
-function createDock(){
+function createDock(discImages){
     const dockContents = GM_getResourceText("htmlInject");
     let dockContainer = document.createElement("div");
     dockContainer.id="discImageDockContainer";
@@ -56,7 +56,7 @@ function createDock(){
     document.getElementById("discDockTabContainer").appendChild(dockContainer);
     
     const preTab = document.getElementById("discDockTable");
-    preTab.addEventListener("click", (e, discImages) => {
+    preTab.addEventListener("click", (e) => {
         const highlightedClass = "highlighted";
         const isRow = element => element.firstChild.tagName === 'TD' && element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
         const newlySelectedRow = e.composedPath().find(isRow);
@@ -95,8 +95,8 @@ function populateDesc(row, discImages){
     const image = discImages[imageid];
     
     document.getElementById("discDockImg").setAttribute("src", image.img);
-    document.getElementById("discTitle").value = image.name;
-    document.getElementById("discDesc").value = image.desc;
+    document.getElementById("discTitle").innerHTML = image.name;
+    document.getElementById("discDesc").innerHTML = image.desc;
 }
 
 function main(){
