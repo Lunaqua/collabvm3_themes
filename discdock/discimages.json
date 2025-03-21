@@ -1,6 +1,6 @@
 [
     {
-        "name": "Windows 95B (OSR2) (i386)",
+        "name": "Windows 95 (OSR2) (i386)",
         "desc": "Windows 95, the B Release, aka OSR2",
         "cat": "Windows Operating Systems",
         "repo": "isos",
@@ -22,5 +22,29 @@
         "repo": "isos",
         "link": "linux/debian-12.9.0-amd64-netinst.iso",
         "img": "https://www.debian.org/logos/openlogo-nd-100.png"
+    },
+    {
+        "name": "Windows 11 (24H2) (amd64)",
+        "desc": "24H2 release of Windows 11",
+        "cat": "Windows Operating Systems",
+        "repo": "isos",
+        "link": "windows/Windows 11 24H2.iso",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/32-351-785-01.jpg"
+    },
+    {
+        "name": "Visual Studio 2005 (Professional)",
+        "desc": "Visual Studio 2005 Professional edition",
+        "cat": "Windows NT Software",
+        "repo": "isos",
+        "link": "software/en_vs_2005_pro_dvd.iso",
+        "img": "https://gzhls.at/i/57/16/175716-l0.jpg"
+    },
+    {
+        "name": "Rocky Linux 9.5 (amd64) (boot)",
+        "desc": "Rocky Linux 9.5, amd64 net installer",
+        "cat": "Linux Distributions",
+        "repo": "lily",
+        "link": "Rocky-9.5-x86_64-boot.iso",
+        "img": "https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2022/264/this-month-s-dvd/dvd-264-lmi_sideb_rocky.png/812076-1-eng-US/dvd-264-lmi_SideB_Rocky.png1_reference.png"
     }
 ]
