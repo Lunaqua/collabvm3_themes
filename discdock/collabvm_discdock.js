@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-21_7
+// @version      2025-03-21_8
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -75,21 +75,21 @@ function createDock(){
 
 function populateDock(discImages){
     const tBody = document.getElementById("discDockTableBody");
-    let cats = new set();
+    let cats = new Set();
     discImages.forEach( (item, index) => cats.add(item.cat));
     cats = Array.from(cats).sort();
-    
-    cats.forEach( (item, index) => tBody.appendChild(document.createElement("tr").innerHTML('<th>'+item+'</th>')));
-    const headings = tBody.getElementsByTagName("th").parentElement;
+
+    cats.forEach( (item, index) => tBody.appendChild(Object.assign(document.createElement("tr"), {innerHTML: '<th>'+item+'</th>'})));
+    const headings = tBody.getElementsByTagName("th");
     
     discImages.forEach( function(item, index){
-        const i = cats.findIndex(item.cat);
-        headings[i].append(document.createElement("tr").innerHTML('<td>'+item.name+'</td>'));
-    })
+        const i = cats.findIndex(element => element === item.cat);
+        this[i].parentElement.insertAdjacentElement("afterend", Object.assign(document.createElement("tr"),{innerHTML: '<td>'+item.name+'</td>'}));
+    }, headings)
 }
 
 function main(){
-    discImages = JSON.parse(GM_getResourceText("discImages"));
+    const discImages = JSON.parse(GM_getResourceText("discImages"));
     
     loadCss();
     createDockTab();
