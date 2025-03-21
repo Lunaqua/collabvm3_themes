@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-21_6
+// @version      2025-03-21_7
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -9,6 +9,7 @@
 // @match        https://computernewb.com/collab-vm/experimental-vm/
 // @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discdock.css
 // @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discdock.html
+// @resource discImages https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discimages.json
 // @grant GM_getResourceText
 // ==/UserScript==
 
@@ -72,11 +73,28 @@ function createDock(){
     })
 }
 
+function populateDock(discImages){
+    const tBody = document.getElementById("discDockTableBody");
+    let cats = set();
+    discImages.forEach( (item, index) => cats.add(item.cat));
+    cats = Array.from(cats).sort();
+    
+    cats.forEach( (item, index) => tBody.appendChild(document.createElement("tr").innerHTML('<th>'+item+'</th>')));
+    const headings = tBody.getElementsByTagName("th").parentElement;
+    
+    discImages.forEach( function(item, index){
+        const i = cats.findIndex(item.cat);
+        headings[i].append(document.createElement("tr").innerHTML('<td>'+item.name+'</td>'));
+    })
+}
+
 function main(){
+    discImages = JSON.parse(GM_getResourceText("discImages"));
+    
     loadCss();
     createDockTab();
     createDock();
-    
+    populateDock(discImages);
 }
 
 main();

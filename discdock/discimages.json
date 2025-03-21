@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Windows 95B (OSR2) (i386)",
+        "desc": "Windows 95, the B Release, aka OSR2",
+        "cat": "Windows Operating Systems",
+        "repo": "isos",
+        "link": "windows/Win95 OSR2.ISO",
+        "img": "https://archive.org/download/microsoft-windows-95-osr-2.1-oem/win95-osr21.jpg",
+    },
+    {
+        "name": "Windows 7 (SP1) (amd64)",
+        "desc": "64-bit release of Windows 7, Service Pack 1",
+        "cat": "Windows Operating Systems",
+        "repo": "isos",
+        "link": "windows/Windows 7 SP1 x64.iso",
+        "img": "https://archive.org/download/Win7UltimateRTMx64/Microsoft_GLC_00736_Windows_7_Ultimate_64_bit_654853.jpg",
+    },
+    {
+        "name": "Debian 12.9.0 (bookworm) (amd64) (netinst)",
+        "desc": "Debian 12 aka bookworm, amd64 net installer",
+        "cat": "Linux Distributions",
+        "repo": "isos",
+        "link": "linux/debian-12.9.0-amd64-netinst.iso",
+        "img": "https://www.debian.org/logos/openlogo-nd-100.png"
+    }
+]
