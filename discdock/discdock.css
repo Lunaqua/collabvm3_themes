@@ -1,12 +1,11 @@
 /* CSS Required for CollabVM Disc Dock */
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .dock-tab-container {
-    width: auto;
-    height: 2.25em;
+    height: 2.25em !important;
 }
 
 .dock-tab {
@@ -24,7 +23,7 @@
 }
 
 .dock-container {
-    width: 30rem;
+    width: auto;
     height: 30rem;
     position: fixed;
     bottom: 0;
@@ -41,9 +40,36 @@
     border-top-left-radius: var(--bs-border-radius, 3px);
     border-top-right-radius: var(--bs-border-radius, 3px);
     
+    width: 85vw;
+    min-width: 30em;
 }
 
 .disc-dock-header {
     border-bottom: 1px solid black;
     width: auto;
+}
+
+.disc-content-con {
+    display: flex;
+}
+
+.disc-dock-info {
+    flex-basis: 20%;
+    flex-shrink: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.disc-dock-img-con {
+    width: 10em;
+    height: 10em;
+    
+    min-width: 4em;
+    min-height: 4em;
+}
+
+.disc-dock-list {
+    flex-basis: 80%;
+    flex-shrink: 1;
+    
 }
