@@ -1,8 +1,8 @@
 /* CSS Required for CollabVM Disc Dock */
 
 .hidden {
-    display: none !important;
     bottom: -30rem !important;
+    opacity: 0% !important;
 }
 
 .move-tab {
@@ -40,7 +40,8 @@
     display: flex;
     justify-content: center;
     gap: 0.25em;
-    transition: bottom 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 100%;
 }
 
 .disc-dock {
@@ -50,12 +51,16 @@
     
     width: 85vw;
     min-width: 30em;
+    opacity: 100%;
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .disc-dock-header {
     border-bottom: 1px solid black;
     width: auto;
     display: flex;
+    gap: 0.5em;
+    padding: 0.5em;
 }
 
 .disc-dock-header > p {
@@ -68,6 +73,8 @@
 
 .disc-content-con {
     display: flex;
+    margin-top: 0.25em;
+    gap: 0.5em;
 }
 
 .disc-dock-info {
@@ -75,6 +82,7 @@
     flex-shrink: 5;
     display: flex;
     flex-direction: column;
+    margin-left: 0.5em;
 }
 
 .disc-dock-info-text {
@@ -111,6 +119,7 @@
 .disc-dock-list {
     flex-basis: 80%;
     overflow: auto;
+    max-height: 27.5rem;
 }
 
 .disc-dock-list th {
