@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-21_10
+// @version      2025-03-21_11
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -99,9 +99,21 @@ function populateDesc(row, discImages){
     document.getElementById("discDesc").innerHTML = image.desc;
 }
 
+function sendChatStr(str){
+    const chatInput = document.getElementById("chat-input");
+    chatInput.value = str;
+    document.getElementById("sendChatBtn").click();
+}
+
+function enableButtons(){
+    const ejectButton = document.getElementById("discDockEject");
+    const insertButton = document.getElementById("discDockInsert");
+    
+    ejectButton.addEventListener("click", sendChatStr("!eject"));
+}
+
 function main(){
     const discImages = JSON.parse(GM_getResourceText("discImages"));
-    
     loadCss();
     createDockTab();
     createDock(discImages);
