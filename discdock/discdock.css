@@ -61,6 +61,7 @@
     display: flex;
     gap: 0.5em;
     padding: 0.5em;
+    color: white;
 }
 
 .disc-dock-header > p {
@@ -141,4 +142,5 @@
 
 .highlighted {
     background-color: var(--bs-primary, #0d6efd);
+    color: white;
 }
