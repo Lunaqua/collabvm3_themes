@@ -61,7 +61,7 @@
     margin: 0.5em;
 }
 
-.disc-dock-btn {
+.disc-dock-header button:first-of-type {
     margin-left: auto;
 }
 

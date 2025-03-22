@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-21_11
+// @version      2025-03-22
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -68,7 +68,7 @@ function createDock(discImages){
         
         if (newlySelectedRow) {
             newlySelectedRow.classList.toggle(highlightedClass);
-            newlySelectedRow.id = "selected-disc";
+            newlySelectedRow.id = "selectedDisc";
             
             populateDesc(newlySelectedRow, discImages);
         }
@@ -105,11 +105,27 @@ function sendChatStr(str){
     document.getElementById("sendChatBtn").click();
 }
 
-function enableButtons(){
+function enableButtons(discImages){
     const ejectButton = document.getElementById("discDockEject");
     const insertButton = document.getElementById("discDockInsert");
     
-    ejectButton.addEventListener("click", sendChatStr("!eject"));
+    ejectButton.addEventListener("click", (e) => sendChatStr("!eject cd"));
+    insertButton.addEventListener("click", (e) => {
+        const selected = document.getElementById("selectedDisc");
+        const imgId = selected.firstChild.getAttribute("imageid");
+        const disc = discImages[imgId];
+        
+        switch (disc.repo){
+            case "isos":
+                sendChatStr("!cd "+disc.link);
+                break;
+            
+            default:
+                console.log("no way!")
+                break;
+        }
+        
+    })
 }
 
 function main(){
@@ -118,6 +134,7 @@ function main(){
     createDockTab();
     createDock(discImages);
     populateDock(discImages);
+    enableButtons(discImages);
 }
 
 main();
