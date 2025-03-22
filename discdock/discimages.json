@@ -3,6 +3,7 @@
         "name": "Windows 95 (OSR2) (i386)",
         "desc": "Windows 95, the B Release, aka OSR2",
         "cat": "Windows Operating Systems",
+        "year": "1996",
         "repo": "isos",
         "link": "windows/Win95 OSR2.ISO",
         "img": "https://archive.org/download/microsoft-windows-95-osr-2.1-oem/win95-osr21.jpg"
@@ -11,6 +12,7 @@
         "name": "Windows 7 (SP1) (amd64)",
         "desc": "64-bit release of Windows 7, Service Pack 1",
         "cat": "Windows Operating Systems",
+        "year": "2010",
         "repo": "isos",
         "link": "windows/Windows 7 SP1 x64.iso",
         "img": "https://archive.org/download/Win7UltimateRTMx64/Microsoft_GLC_00736_Windows_7_Ultimate_64_bit_654853.jpg"
@@ -19,6 +21,7 @@
         "name": "Debian 12.9.0 (bookworm) (amd64) (netinst)",
         "desc": "Debian 12 aka bookworm, amd64 net installer",
         "cat": "Linux Distributions",
+        "year": "2024",
         "repo": "isos",
         "link": "linux/debian-12.9.0-amd64-netinst.iso",
         "img": "https://www.debian.org/logos/openlogo-nd-100.png"
@@ -27,6 +30,7 @@
         "name": "Windows 11 (24H2) (amd64)",
         "desc": "24H2 release of Windows 11",
         "cat": "Windows Operating Systems",
+        "year": "2024",
         "repo": "isos",
         "link": "windows/Windows 11 24H2.iso",
         "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/32-351-785-01.jpg"
@@ -35,6 +39,7 @@
         "name": "Visual Studio 2005 (Professional)",
         "desc": "Visual Studio 2005 Professional edition",
         "cat": "Windows NT Software",
+        "year": "2005",
         "repo": "isos",
         "link": "software/en_vs_2005_pro_dvd.iso",
         "img": "https://gzhls.at/i/57/16/175716-l0.jpg"
@@ -43,6 +48,7 @@
         "name": "Rocky Linux 9.5 (amd64) (boot)",
         "desc": "Rocky Linux 9.5, amd64 net installer",
         "cat": "Linux Distributions",
+        "year": "2024",
         "repo": "lily",
         "link": "Rocky-9.5-x86_64-boot.iso",
         "img": "https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2022/264/this-month-s-dvd/dvd-264-lmi_sideb_rocky.png/812076-1-eng-US/dvd-264-lmi_SideB_Rocky.png1_reference.png"

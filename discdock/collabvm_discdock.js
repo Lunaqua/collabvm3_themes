@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-22
+// @version      2025-03-22_1
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -86,7 +86,7 @@ function populateDock(discImages){
     
     discImages.forEach( function(item, index){
         const i = cats.findIndex(element => element === item.cat);
-        this[i].parentElement.insertAdjacentElement("afterend", Object.assign(document.createElement("tr"),{innerHTML: '<td imageid="'+index+'">'+item.name+'</td>'}));
+        this[i].parentElement.insertAdjacentElement("afterend", Object.assign(document.createElement("tr"),{innerHTML: '<td imageid="'+index+'">'+item.name+'</td><span class="disc-dock-year">'+item.year+'</span>'}));
     }, headings)
 }
 

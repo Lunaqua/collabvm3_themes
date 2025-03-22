@@ -86,6 +86,12 @@
     font-size: 1.5em;
 }
 
+.disc-dock-year {
+    text-align: right;
+    color: #CFCFCF;
+    font-style: italic;
+}
+
 .disc-dock-img {
     width: var(--dock-img-size);
     height: var(--dock-img-size);
