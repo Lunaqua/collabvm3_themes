@@ -52,5 +52,68 @@
         "repo": "lily",
         "link": "Rocky-9.5-x86_64-boot.iso",
         "img": "https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2022/264/this-month-s-dvd/dvd-264-lmi_sideb_rocky.png/812076-1-eng-US/dvd-264-lmi_SideB_Rocky.png1_reference.png"
+    },
+    {
+        "name": "Hiren's BootCD (PE) (amd64)",
+        "desc": "The next generation Hiren's Boot Disc, based on Windows 10 PE",
+        "cat": "miscellaneous",
+        "year": "2024",
+        "repo": "isos",
+        "link": "windows/HBCD_PE_x64.iso",
+        "img": "https://www.hirensbootcd.org/wp-content/uploads/2024/01/HBCD_PE_Screenshot_1.png"
+    },
+    {
+        "name": "Windows MultiPoint Server 2010 (RTM) (amd64)",
+        "desc": "2010 release of MultiPoint Server, focused on managing remote desktops",
+        "cat": "Windows Operating Systems",
+        "year": "2010",
+        "repo": "isos",
+        "link": "windows/Windows Multipoint Server 2010.iso",
+        "img": "https://betawiki.net/images/2/22/MP2010-Desktop.png"
+    },
+    {
+        "name": "Windows 10 (22H2) (amd64)",
+        "desc": "Windows 10, 22H2 release",
+        "cat": "Windows Operating Systems",
+        "year": "2022",
+        "repo": "isos",
+        "link": "windows/Windows 10 22H2.iso",
+        "img": "https://cdn.clanto.shop/img/cms/dvd%20windows%2010.jpg"
+    },
+    {  
+        "name": "Windows 2000 Professional (SP4) (i586)",
+        "desc": "Windows 2000 Service Pack 4, latest official.",
+        "cat": "Windows Operating Systems",
+        "year": "2000",
+        "repo": "isos",
+        "link": "windows/Windows 2000 Professional SP4.iso",
+        "img": "https://www.winhistory.de/more/bilder/cd_win2000_sp4.jpg"
+    },
+    {
+        "name": "Windows 98 (Second Edition) (i486)",
+        "desc": "The second edition release of Windows 98",
+        "cat": "Windows Operating Systems",
+        "year": "1999",
+        "repo": "isos",
+        "link": "windows/Windows 98 Second Edition.iso",
+        "img": "https://s3-us-west-2.amazonaws.com/ordinateurs/wp-content/uploads/2017/04/01162144/Windows-98-Second-Edition-Updates.jpg"
+    },
+    {
+        "name": "Windows Home Server (Power Pack 3) (i686)",
+        "desc": "Windows Home Server, based on Windows Server 2003, and elements of Vista.",
+        "cat": "Windows Operating Systems",
+        "year": "2007",
+        "repo": "isos",
+        "link": "windows/Windows Home Server 2007.iso",
+        "img": "https://archive.org/download/WHS2007/___ia_thumb.jpg"
+    },
+    {
+        "name": "Windows Home Server 2011 (RTM) (amd64)",
+        "desc": "The second and last release of Windows Home Server",
+        "cat": "Windows Operating Systems",
+        "year": "2011",
+        "repo": "isos",
+        "link": "windows/en_server_install_disc_windows_home_server_2011_x64_dvd_658487.iso",
+        "img": "https://archive.org/download/microsoft-windows-home-server-2011-server-installation-64-bit-software-microsoft-x-16-99610-01-2011/Microsoft%20Windows%20Home%20Server%202011%20-%20Server%20Installation%2064-Bit%20Software%20(Microsoft)(X16-99610-01)(2011).jpg"
     }
 ]

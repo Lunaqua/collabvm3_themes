@@ -130,6 +130,7 @@ function enableButtons(discImages){
 
 function main(){
     const discImages = JSON.parse(GM_getResourceText("discImages"));
+    discImages = discImages.sort((a, b) => (a.name > b.name ? 1 : -1));
     loadCss();
     createDockTab();
     createDock(discImages);

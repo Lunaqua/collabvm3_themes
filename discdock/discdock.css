@@ -2,10 +2,11 @@
 
 .hidden {
     display: none !important;
+    bottom: -30rem !important;
 }
 
 .move-tab {
-    bottom: 30em !important;
+    bottom: 30rem !important;
 }
 
 #vmview {
@@ -90,6 +91,7 @@
     text-align: right;
     color: #CFCFCF;
     font-style: italic;
+    margin-left: -3em;
 }
 
 .disc-dock-img {
