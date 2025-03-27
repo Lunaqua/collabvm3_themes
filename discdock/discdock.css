@@ -1,12 +1,12 @@
 /* CSS Required for CollabVM Disc Dock */
 
 .hidden {
-    bottom: -30rem !important;
+    bottom: -35rem !important;
     opacity: 0% !important;
 }
 
 .move-tab {
-    bottom: 30rem !important;
+    bottom: 35rem !important;
 }
 
 #vmview {
@@ -31,7 +31,7 @@
 
 .dock-container {
     width: auto;
-    height: 30rem;
+    height: 35rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -120,7 +120,7 @@
 .disc-dock-list {
     flex-basis: 80%;
     overflow: auto;
-    max-height: 26rem;
+    max-height: 31rem;
 }
 
 .disc-dock-list th {

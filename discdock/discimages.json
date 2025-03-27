@@ -9,7 +9,7 @@
         "img": "https://archive.org/download/microsoft-windows-95-osr-2.1-oem/win95-osr21.jpg"
     },
     {
-        "name": "Windows 7 (SP1) (amd64)",
+        "name": "Windows 7 Ultimate (SP1) (amd64)",
         "desc": "64-bit release of Windows 7, Service Pack 1",
         "cat": "Windows Operating Systems",
         "year": "2010",
@@ -286,5 +286,41 @@
         "repo": "isos",
         "link": "other/NetBSD-10.1-amd64.iso",
         "img": "https://archive.org/download/net-bsd-x-68k/NetBSD%20X68k%20CD.jpg"
+    },
+    {
+        "name": "Windows XP Professional (RTM) (i686)",
+        "desc": "The original RTM build of Windows XP, recommended to use SP3.",
+        "cat": "Windows Operating Systems",
+        "year": "2001",
+        "repo": "isos",
+        "link": "windows/en_winxp_pro_x86_build2600_iso.img",
+        "img": "http://1.bp.blogspot.com/-ygz7RLtS4do/TcPbkpTaJUI/AAAAAAAAAG4/UW6Sxkak100/s1600/Windows_XP_FULL_CD.jpg"
+    },
+    {
+        "name": "Windows 8.1 (Update 3) (amd64)",
+        "desc": "Update 3 build of Windows 8.1, the hasty job to mend Windows 8's faults.",
+        "cat": "Windows Operating Systems",
+        "year": "2014",
+        "repo": "isos",
+        "link": "windows/en_windows_8.1_with_update_x64_dvd_6051480.iso",
+        "img": "https://i.pinimg.com/originals/61/81/85/61818539732b3076222a9e936efe6061.jpg"
+    },
+    {
+        "name": "ReactOS 0.4.15 (i586?)",
+        "desc": "Open Source clean room reimplementation of Windows NT. Barely functions.",
+        "cat": "Other Operating Systems",
+        "year": "2025",
+        "repo": "isos",
+        "link": "other/ReactOS-0.4.15-x86.iso",
+        "img": "http://svn.reactos.org/media/reactos_0.3.1_booklet_cover.png"
+    },
+    {
+        "name": "Mac OS X 10.8.2 (Mountain Lion) (i686) (Niresh)",
+        "desc": "Heavily patched installer for Mac OS X 10.8.2 Mountain Lion",
+        "cat": "UNIX Operating Systems",
+        "year": "2021?",
+        "repo": "isos",
+        "link": "other/Niresh's 10.8.2 Installer.iso",
+        "img": "https://meechanmama.work/wp-content/uploads/2024/01/%E3%81%86%E3%82%8B%E6%98%9F%E3%82%84%E3%81%A4%E3%82%89-%E7%AC%AC2%E6%9C%9F.jpg"
     }
 ]
