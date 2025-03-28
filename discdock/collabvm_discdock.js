@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-28_6
+// @version      2025-03-28_8
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -46,8 +46,8 @@ function createDockTab(id, text){
     document.getElementById(id+"Tab").addEventListener('click', function(e) { toggleDock(id); });
 }
 
-function createDock(idT, discImages){
-    const dockContents = GM_getResourceText("htmlInject");
+function createDock(idT, m, discImages){
+    const dockContents = GM_getResourceText("htmlInject").replace(/id="disc/g, 'id="'+m);
     let dockContainer = document.createElement("div");
     dockContainer.id=idT+"DockContainer";
     dockContainer.classList.toggle("dock-container");
@@ -56,7 +56,7 @@ function createDock(idT, discImages){
     dockContainer.innerHTML = dockContents;
     document.getElementById(idT+"TabContainer").appendChild(dockContainer);
     
-    const preTab = document.getElementById("discDockTable");
+    const preTab = document.getElementById(m+"DockTable");
     preTab.addEventListener("click", (e) => {
         const highlightedClass = "highlighted";
         const isRow = element => element.firstChild.tagName === 'TD' && element.tagName === 'TR' && element.parentElement.tagName === 'TBODY';
@@ -69,15 +69,15 @@ function createDock(idT, discImages){
         
         if (newlySelectedRow) {
             newlySelectedRow.classList.toggle(highlightedClass);
-            newlySelectedRow.id = "selectedDisc";
+            newlySelectedRow.id = "selected"+m;
             
-            populateDesc(newlySelectedRow, discImages);
+            populateDesc(newlySelectedRow, m, discImages);
         }
     })
 }
 
-function populateDock(discImages){
-    const tBody = document.getElementById("discDockTableBody");
+function populateDock(m, discImages){
+    const tBody = document.getElementById(m+"DockTableBody");
     let cats = new Set();
     discImages.forEach( (item, index) => cats.add(item.cat));
     cats = Array.from(cats).sort();
@@ -87,17 +87,17 @@ function populateDock(discImages){
     
     discImages.forEach( function(item, index){
         const i = cats.findIndex(element => element === item.cat);
-        this[i].parentElement.insertAdjacentElement("afterend", Object.assign(document.createElement("tr"),{innerHTML: '<td imageid="'+index+'">'+item.name+'</td><span class="disc-dock-year">'+item.year+'</span>'}));
+        this[i].parentElement.insertAdjacentElement("afterend", Object.assign(document.createElement("tr"),{innerHTML: '<td imageid="'+index+'">'+item.name+'</td><span class="'+m+'-dock-year">'+item.year+'</span>'}));
     }, headings)
 }
 
-function populateDesc(row, discImages){
+function populateDesc(row, m, discImages){
     const imageid = row.firstChild.getAttribute("imageid");
     const image = discImages[imageid];
     
-    document.getElementById("discDockImg").setAttribute("src", image.img);
-    document.getElementById("discTitle").innerHTML = image.name;
-    document.getElementById("discDesc").innerHTML = image.desc;
+    document.getElementById(m+"DockImg").setAttribute("src", image.img);
+    document.getElementById(m+"Title").innerHTML = image.name;
+    document.getElementById(m+"Desc").innerHTML = image.desc;
 }
 
 function sendChatStr(str){
@@ -106,13 +106,13 @@ function sendChatStr(str){
     document.getElementById("sendChatBtn").click();
 }
 
-function enableButtons(discImages){
-    const ejectButton = document.getElementById("discDockEject");
-    const insertButton = document.getElementById("discDockInsert");
+function enableButtons(m, eM, discImages){
+    const ejectButton = document.getElementById(m+"DockEject");
+    const insertButton = document.getElementById(m+"DockInsert");
     
-    ejectButton.addEventListener("click", (e) => sendChatStr("!eject cd"));
+    ejectButton.addEventListener("click", (e) => sendChatStr("!eject "+eM));
     insertButton.addEventListener("click", (e) => {
-        const selected = document.getElementById("selectedDisc");
+        const selected = document.getElementById("selected"+m);
         const imgId = selected.firstChild.getAttribute("imageid");
         const disc = discImages[imgId];
         
@@ -122,18 +122,17 @@ function enableButtons(discImages){
                 break;
                 
             case "lily":
-                sendChatStr("!lilycd"+disc.link);
+                sendChatStr("!lilycd "+disc.link);
                 break;
                 
             case "flp":
-                sendChatStr("!flp"+disc.link);
+                sendChatStr("!flp "+disc.link);
                 break;
             
             default:
                 console.log("no way!")
                 break;
         }
-        
     })
 }
 
@@ -145,10 +144,12 @@ function main(){
     loadCss();
     createDockTab("discImage", "Disc Images");
     createDockTab("flpImage", "Floppy Images");
-    createDock("discImage", discImages);
-    createDock("discImage", flpImages);
-    populateDock(discImages);
-    enableButtons(discImages);
+    createDock("discImage", "disc", discImages);
+    createDock("flpImage", "flp", flpImages);
+    populateDock("disc", discImages);
+    populateDock("flp", flpImages);
+    enableButtons("disc", "cd", discImages);
+    enableButtons("flp", "flp", flpImages);
 }
 
 main();
