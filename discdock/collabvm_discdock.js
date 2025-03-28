@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-28_4
+// @version      2025-03-28_5
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -40,8 +40,8 @@ function createDockTab(id, text){
     dockTab.classList.toggle("dock-container");
     dockTab.classList.toggle("dock-tab-container");
     dockTab.classList.toggle(id+"-tab-container");
-    dockTab.innerHTML = '<div id="'+id+'Tab" class="dock-tab"<p>'+text+'</p></div>';
-    dockTab.appendChild(dockTab);
+    dockTab.innerHTML = '<div id="'+id+'Tab" class="dock-tab"><p>'+text+'</p></div>';
+    bodyTag.appendChild(dockTab);
     
     document.getElementById(id+"Tab").addEventListener('click', function(e) { toggleDock(); });
 }
@@ -54,7 +54,7 @@ function createDock(idT, discImages){
     dockContainer.classList.toggle("hidden");
     
     dockContainer.innerHTML = dockContents;
-    document.getElementById("dockTabContainer").appendChild(dockContainer);
+    document.getElementById(idT+"TabContainer").appendChild(dockContainer);
     
     const preTab = document.getElementById("discDockTable");
     preTab.addEventListener("click", (e) => {
