@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-22_3
+// @version      2025-03-28
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -10,6 +10,7 @@
 // @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discdock.css
 // @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discdock.html
 // @resource discImages https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discimages.json
+// @resource flpImages https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/flpimages.json
 // @grant GM_getResourceText
 // ==/UserScript==
 
@@ -28,32 +29,32 @@ function toggleDock(){
     const dock = document.getElementById("discImageDockContainer");
     dock.classList.toggle("hidden");
     
-    const tab = document.getElementById("discDockTabContainer");
+    const tab = document.getElementById("discImageTabContainer");
     tab.classList.toggle("move-tab");
 }
     
-function createDockTab(){
+function createDockTab(id, text){
     let dockTab = document.createElement("div");
     const bodyTag = document.getElementsByTagName("body")[0];
-    dockTab.id="discDockTabContainer";
+    dockTab.id=id+"Container";
     dockTab.classList.toggle("dock-container");
     dockTab.classList.toggle("dock-tab-container");
 
-    dockTab.innerHTML = '<div id="discImageTab" class="dock-tab"><p>Disc Images</p></div>';
+    dockTab.innerHTML = '<div id="'+id+'" class="dock-tab"><p>'+text+'</p></div>';
     bodyTag.appendChild(dockTab);
     
-    document.getElementById("discImageTab").addEventListener('click', function(e) { toggleDock(); });
+    document.getElementById(id).addEventListener('click', function(e) { toggleDock(); });
 }
 
-function createDock(discImages){
+function createDock(idT, discImages){
     const dockContents = GM_getResourceText("htmlInject");
     let dockContainer = document.createElement("div");
-    dockContainer.id="discImageDockContainer";
+    dockContainer.id=idT+"DockContainer";
     dockContainer.classList.toggle("dock-container");
     dockContainer.classList.toggle("hidden");
     
     dockContainer.innerHTML = dockContents;
-    document.getElementById("discDockTabContainer").appendChild(dockContainer);
+    document.getElementById(idT+"TabContainer").appendChild(dockContainer);
     
     const preTab = document.getElementById("discDockTable");
     preTab.addEventListener("click", (e) => {
@@ -119,6 +120,14 @@ function enableButtons(discImages){
             case "isos":
                 sendChatStr("!cd "+disc.link);
                 break;
+                
+            case "lily":
+                sendChatStr("!lilycd"+disc.link);
+                break;
+                
+            case "flp":
+                sendChatStr("!flp"+disc.link);
+                break;
             
             default:
                 console.log("no way!")
@@ -131,9 +140,13 @@ function enableButtons(discImages){
 function main(){
     const discImages = JSON.parse(GM_getResourceText("discImages"));
     discImages.sort((a, b) => (a.name < b.name ? 1 : -1));
+    const flpImages = JSON.parse(GM_getResourceText("flpImages"));
+    flpImages.sort((a, b) => (a.name < b.name ? 1 : -1));
     loadCss();
-    createDockTab();
-    createDock(discImages);
+    createDockTab("discImageTab", "Disc Images");
+    createDockTab("flpImageTab", "Floppy Images");
+    createDock("discImage", discImages);
+    createDock("discImage", flpImages);
     populateDock(discImages);
     enableButtons(discImages);
 }

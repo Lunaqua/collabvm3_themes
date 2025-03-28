@@ -117,7 +117,7 @@
         "img": "https://archive.org/download/microsoft-windows-home-server-2011-server-installation-64-bit-software-microsoft-x-16-99610-01-2011/Microsoft%20Windows%20Home%20Server%202011%20-%20Server%20Installation%2064-Bit%20Software%20(Microsoft)(X16-99610-01)(2011).jpg"
     },
     {
-        "name": "Windows Me (i486)",
+        "name": "Windows Me (RTM) (i486)",
         "desc": "The final MS-DOS based Windows release, Windows Me",
         "cat": "Windows Operating Systems",
         "year": "2000",
@@ -322,5 +322,41 @@
         "repo": "isos",
         "link": "other/Niresh's 10.8.2 Installer.iso",
         "img": "https://meechanmama.work/wp-content/uploads/2024/01/%E3%81%86%E3%82%8B%E6%98%9F%E3%82%84%E3%81%A4%E3%82%89-%E7%AC%AC2%E6%9C%9F.jpg"
+    },
+    {
+        "name": "Mac OS X Driver Disc",
+        "desc": "Collection of drivers for Mac OS X",
+        "cat": "Miscellaneous",
+        "year": "N/A",
+        "repo": "isos",
+        "link": "driver/OSXDrivers.iso",
+        "img": "https://flylib.com/books/2/673/1/html/2/images/11inf20.jpg"
+    },
+    {
+        "name": "Virtio 0.1.225 (Windows)",
+        "desc": "Collection of VM drivers for Windows, version 0.1.225",
+        "cat": "Miscellaneous",
+        "year": "2022",
+        "repo": "isos",
+        "link": "driver/virtio-win-0.1.225.iso",
+        "img": "https://user-images.githubusercontent.com/49584984/236659909-9cab16e3-1abf-4948-ab45-af1e8676a4db.png"
+    },
+    {
+        "name": "Virtio 1.9.44 (Windows)",
+        "desc": "Collection of VM drivers for Windows, version 1.9.44",
+        "cat": "Miscellaneous",
+        "year": "2025",
+        "repo": "isos",
+        "link": "driver/virtio-win-1.9.44.iso",
+        "img": "https://user-images.githubusercontent.com/49584984/236659909-9cab16e3-1abf-4948-ab45-af1e8676a4db.png"
+    },
+    {
+        "name": "FreeDOS 1.3 (i386?) (Live)",
+        "desc": "FreeDOS 1.3 Live CD, a free replacement for DOS.",
+        "cat": "Other DOS Operating Systems",
+        "year": "2022",
+        "repo": "isos",
+        "link": "dos/FD13LIVE.iso",
+        "img": "http://www.geocities.ws/jvaldeztoo/FreeDOS/Downloads/CDlabel1F.jpg"
     }
 ]
