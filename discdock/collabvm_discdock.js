@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-28
+// @version      2025-03-28_1
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -33,13 +33,16 @@ function toggleDock(){
     tab.classList.toggle("move-tab");
 }
     
-function createDockTab(id, text){
+function createDockTabContainer(){
     let dockTab = document.createElement("div");
     const bodyTag = document.getElementsByTagName("body")[0];
-    dockTab.id=id+"Container";
+    dockTab.id="dockTabContainer";
     dockTab.classList.toggle("dock-container");
     dockTab.classList.toggle("dock-tab-container");
-
+}
+function createDockTab(id, text){
+    const dockTab = document.getElementById("dockTabContainer");
+    
     dockTab.innerHTML = '<div id="'+id+'" class="dock-tab"><p>'+text+'</p></div>';
     bodyTag.appendChild(dockTab);
     
@@ -54,7 +57,7 @@ function createDock(idT, discImages){
     dockContainer.classList.toggle("hidden");
     
     dockContainer.innerHTML = dockContents;
-    document.getElementById(idT+"TabContainer").appendChild(dockContainer);
+    document.getElementById("dockTabContainer").appendChild(dockContainer);
     
     const preTab = document.getElementById("discDockTable");
     preTab.addEventListener("click", (e) => {
@@ -143,6 +146,7 @@ function main(){
     const flpImages = JSON.parse(GM_getResourceText("flpImages"));
     flpImages.sort((a, b) => (a.name < b.name ? 1 : -1));
     loadCss();
+    createDockTabContainer();
     createDockTab("discImageTab", "Disc Images");
     createDockTab("flpImageTab", "Floppy Images");
     createDock("discImage", discImages);
