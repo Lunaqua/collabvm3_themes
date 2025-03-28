@@ -12,8 +12,17 @@
 #vmview {
     margin-bottom: 3em;
 }
+
 .dock-tab-container {
     height: 2.25em !important;
+}
+
+.discImage-tab-container {
+    left: 50px !important;
+}
+
+.flpImage-tab-container {
+    right: 50px !important;
 }
 
 .dock-tab {

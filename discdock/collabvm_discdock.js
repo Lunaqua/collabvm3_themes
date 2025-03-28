@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-28_2
+// @version      2025-03-28_4
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -29,26 +29,21 @@ function toggleDock(){
     const dock = document.getElementById("discImageDockContainer");
     dock.classList.toggle("hidden");
     
-    const tab = document.getElementById("discImageTabContainer");
+    const tab = document.getElementById("dockTabContainer");
     tab.classList.toggle("move-tab");
-}
-    
-function createDockTabContainer(){
-    let dockTab = document.createElement("div");
-    const bodyTag = document.getElementsByTagName("body")[0];
-    dockTab.id="dockTabContainer";
-    dockTab.classList.toggle("dock-container");
-    dockTab.classList.toggle("dock-tab-container");
-    bodyTag.appendChild(dockTab);
 }
 
 function createDockTab(id, text){
-    const dockTabCon = document.getElementById("dockTabContainer");
-    let dockTab = document.createElement("div");
-    dockTab.innerHTML = '<div id="'+id+'Tab" class="dock-tab"><p>'+text+'</p></div>';
+    const bodyTag = document.getElementsByTagName("body")[0];
+    const dockTab = document.createElement("div");
+    dockTab.id=id+"TabContainer";
+    dockTab.classList.toggle("dock-container");
+    dockTab.classList.toggle("dock-tab-container");
+    dockTab.classList.toggle(id+"-tab-container");
+    dockTab.innerHTML = '<div id="'+id+'Tab" class="dock-tab"<p>'+text+'</p></div>';
+    dockTab.appendChild(dockTab);
     
-    document.getElementById(id).addEventListener('click', function(e) { toggleDock(); });
-    dockTabCon.appendChild(dockTab);
+    document.getElementById(id+"Tab").addEventListener('click', function(e) { toggleDock(); });
 }
 
 function createDock(idT, discImages){
@@ -148,7 +143,6 @@ function main(){
     const flpImages = JSON.parse(GM_getResourceText("flpImages"));
     flpImages.sort((a, b) => (a.name < b.name ? 1 : -1));
     loadCss();
-    createDockTabContainer();
     createDockTab("discImage", "Disc Images");
     createDockTab("flpImage", "Floppy Images");
     createDock("discImage", discImages);
