@@ -18,11 +18,11 @@
 }
 
 .discImage-tab-container {
-    left: 50px !important;
+    right: 7.5em !important;
 }
 
 .flpImage-tab-container {
-    right: 50px !important;
+    left: 7.5em !important;
 }
 
 .dock-tab {
@@ -32,6 +32,7 @@
     border-top-right-radius: var(--bs-border-radius, 3px);
     
     padding: 0 0.5em;
+    pointer-events: auto;
 }
 
 .dock-tab:hover {
@@ -51,6 +52,8 @@
     gap: 0.25em;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     opacity: 100%;
+    
+    pointer-events: none;
 }
 
 .disc-dock {
@@ -62,6 +65,7 @@
     min-width: 30em;
     opacity: 100%;
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: auto;
 }
 
 .disc-dock-header {
