@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-28_1
+// @version      2025-03-28_2
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -39,14 +39,16 @@ function createDockTabContainer(){
     dockTab.id="dockTabContainer";
     dockTab.classList.toggle("dock-container");
     dockTab.classList.toggle("dock-tab-container");
-}
-function createDockTab(id, text){
-    const dockTab = document.getElementById("dockTabContainer");
-    
-    dockTab.innerHTML = '<div id="'+id+'" class="dock-tab"><p>'+text+'</p></div>';
     bodyTag.appendChild(dockTab);
+}
+
+function createDockTab(id, text){
+    const dockTabCon = document.getElementById("dockTabContainer");
+    let dockTab = document.createElement("div");
+    dockTab.innerHTML = '<div id="'+id+'Tab" class="dock-tab"><p>'+text+'</p></div>';
     
     document.getElementById(id).addEventListener('click', function(e) { toggleDock(); });
+    dockTabCon.appendChild(dockTab);
 }
 
 function createDock(idT, discImages){
@@ -147,8 +149,8 @@ function main(){
     flpImages.sort((a, b) => (a.name < b.name ? 1 : -1));
     loadCss();
     createDockTabContainer();
-    createDockTab("discImageTab", "Disc Images");
-    createDockTab("flpImageTab", "Floppy Images");
+    createDockTab("discImage", "Disc Images");
+    createDockTab("flpImage", "Floppy Images");
     createDock("discImage", discImages);
     createDock("discImage", flpImages);
     populateDock(discImages);
