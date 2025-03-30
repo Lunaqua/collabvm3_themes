@@ -24,6 +24,17 @@ Stable Branch: pushed to when stuff actually works. (Currently v1.6.2)
 
 Pre-1.6 releases can be found in old/
 
+## Disc Dock for CollabVM
+
+A small disc images dock for CollabVM. Requires tamper/grease/violent etc. -monkey. For use with IAOS Bot on
+VM7 and VM8.
+Should work with at least the current and 3.0 "experimental" web application. Partially works with classic.
+It might not work with GreaseMonkey.
+
+Version 1.0.1
+
+[Download](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/master/discdock/collabvm_discdock.js)
+
 ## by navi4205
 
-This project is licensed under the MIT license.
+This project is provided under the MIT license.

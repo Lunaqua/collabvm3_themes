@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      1.0.0
+// @version      1.0.1
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
 // @match        https://computernewb.com/collab-vm/classic/
 // @match        https://computernewb.com/collab-vm/experimental-vm/
-// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discdock.css
-// @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discdock.html
-// @resource discImages https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/discimages.json
-// @resource flpImages https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/discdock/discdock/flpimages.json
+// @resource cssInject  https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/discdock/discdock.css
+// @resource htmlInject https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/discdock/discdock.html
+// @resource discImages https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/discdock/discimages.json
+// @resource flpImages https://raw.githubusercontent.com/Lunaqua/collabvm3_themes/refs/heads/master/discdock/flpimages.json
 // @grant GM_getResourceText
 // ==/UserScript==
 
