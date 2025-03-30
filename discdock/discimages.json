@@ -1,0 +1,362 @@
+[
+    {
+        "name": "Windows 95 (OSR2) (i386)",
+        "desc": "Windows 95, the B Release, aka OSR2",
+        "cat": "Windows Operating Systems",
+        "year": "1996",
+        "repo": "isos",
+        "link": "windows/Win95 OSR2.ISO",
+        "img": "https://archive.org/download/microsoft-windows-95-osr-2.1-oem/win95-osr21.jpg"
+    },
+    {
+        "name": "Windows 7 Ultimate (SP1) (amd64)",
+        "desc": "64-bit release of Windows 7, Service Pack 1",
+        "cat": "Windows Operating Systems",
+        "year": "2010",
+        "repo": "isos",
+        "link": "windows/Windows 7 SP1 x64.iso",
+        "img": "https://archive.org/download/Win7UltimateRTMx64/Microsoft_GLC_00736_Windows_7_Ultimate_64_bit_654853.jpg"
+    },
+    {
+        "name": "Debian 12.9.0 (bookworm) (amd64) (netinst)",
+        "desc": "Debian 12 aka bookworm, amd64 net installer",
+        "cat": "Linux Distributions",
+        "year": "2024",
+        "repo": "isos",
+        "link": "linux/debian-12.9.0-amd64-netinst.iso",
+        "img": "https://www.debian.org/logos/openlogo-nd-100.png"
+    },
+    {
+        "name": "Windows 11 (24H2) (amd64)",
+        "desc": "24H2 release of Windows 11",
+        "cat": "Windows Operating Systems",
+        "year": "2024",
+        "repo": "isos",
+        "link": "windows/Windows 11 24H2.iso",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/32-351-785-01.jpg"
+    },
+    {
+        "name": "Visual Studio 2005 (Professional)",
+        "desc": "Visual Studio 2005 Professional edition",
+        "cat": "Windows NT Software",
+        "year": "2005",
+        "repo": "isos",
+        "link": "software/en_vs_2005_pro_dvd.iso",
+        "img": "https://gzhls.at/i/57/16/175716-l0.jpg"
+    },
+    {
+        "name": "Rocky Linux 9.5 (amd64) (boot)",
+        "desc": "Rocky Linux 9.5, amd64 net installer",
+        "cat": "Linux Distributions",
+        "year": "2024",
+        "repo": "lily",
+        "link": "Rocky-9.5-x86_64-boot.iso",
+        "img": "https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2022/264/this-month-s-dvd/dvd-264-lmi_sideb_rocky.png/812076-1-eng-US/dvd-264-lmi_SideB_Rocky.png1_reference.png"
+    },
+    {
+        "name": "Hiren's BootCD (PE) (amd64)",
+        "desc": "The next generation Hiren's Boot Disc, based on Windows 10 PE",
+        "cat": "Miscellaneous",
+        "year": "2024",
+        "repo": "isos",
+        "link": "windows/HBCD_PE_x64.iso",
+        "img": "https://www.hirensbootcd.org/wp-content/uploads/2024/01/HBCD_PE_Screenshot_1.png"
+    },
+    {
+        "name": "Windows MultiPoint Server 2010 (RTM) (amd64)",
+        "desc": "2010 release of MultiPoint Server, focused on managing remote desktops",
+        "cat": "Windows Operating Systems",
+        "year": "2010",
+        "repo": "isos",
+        "link": "windows/Windows Multipoint Server 2010.iso",
+        "img": "https://betawiki.net/images/2/22/MP2010-Desktop.png"
+    },
+    {
+        "name": "Windows 10 (22H2) (amd64)",
+        "desc": "Windows 10, 22H2 release",
+        "cat": "Windows Operating Systems",
+        "year": "2022",
+        "repo": "isos",
+        "link": "windows/Windows 10 22H2.iso",
+        "img": "https://cdn.clanto.shop/img/cms/dvd%20windows%2010.jpg"
+    },
+    {  
+        "name": "Windows 2000 Professional (SP4) (i586)",
+        "desc": "Windows 2000 Service Pack 4, latest official.",
+        "cat": "Windows Operating Systems",
+        "year": "2003",
+        "repo": "isos",
+        "link": "windows/Windows 2000 Professional SP4.iso",
+        "img": "https://www.winhistory.de/more/bilder/cd_win2000_sp4.jpg"
+    },
+    {
+        "name": "Windows 98 (Second Edition) (i486)",
+        "desc": "The second edition release of Windows 98",
+        "cat": "Windows Operating Systems",
+        "year": "1999",
+        "repo": "isos",
+        "link": "windows/Windows 98 Second Edition.iso",
+        "img": "https://s3-us-west-2.amazonaws.com/ordinateurs/wp-content/uploads/2017/04/01162144/Windows-98-Second-Edition-Updates.jpg"
+    },
+    {
+        "name": "Windows Home Server (Power Pack 3) (i686)",
+        "desc": "Windows Home Server, based on Windows Server 2003, and elements of Vista.",
+        "cat": "Windows Operating Systems",
+        "year": "2007",
+        "repo": "isos",
+        "link": "windows/Windows Home Server 2007.iso",
+        "img": "https://archive.org/download/WHS2007/___ia_thumb.jpg"
+    },
+    {
+        "name": "Windows Home Server 2011 (RTM) (amd64)",
+        "desc": "The second and last release of Windows Home Server",
+        "cat": "Windows Operating Systems",
+        "year": "2011",
+        "repo": "isos",
+        "link": "windows/en_server_install_disc_windows_home_server_2011_x64_dvd_658487.iso",
+        "img": "https://archive.org/download/microsoft-windows-home-server-2011-server-installation-64-bit-software-microsoft-x-16-99610-01-2011/Microsoft%20Windows%20Home%20Server%202011%20-%20Server%20Installation%2064-Bit%20Software%20(Microsoft)(X16-99610-01)(2011).jpg"
+    },
+    {
+        "name": "Windows Me (RTM) (i486)",
+        "desc": "The final MS-DOS based Windows release, Windows Me",
+        "cat": "Windows Operating Systems",
+        "year": "2000",
+        "repo": "isos",
+        "link": "Windows Me (101 - Retail Full).iso",
+        "img": "http://www.winhistory.de/more/bilder/cd_win_me_2.jpg"
+    },
+    {
+        "name": "Windows MultiPoint Server 2011 Standard (RTM) (amd64)",
+        "desc": "2011 release of MultiPoint Server, focused on managing remote desktops",
+        "cat": "Windows Operating Systems",
+        "year": "2011",
+        "repo": "isos",
+        "link": "windows/Windows Multipoint Server 2011.iso",
+        "img": "https://betawiki.net/images/2/22/MP2010-Desktop.png"
+    },
+    {
+        "name": "Windows MultiPoint Server 2012 Standard (RTM) (amd64)",
+        "desc": "2012 release of MultiPoint Server, based now on Windows Server 2012.",
+        "cat": "Windows Operating Systems",
+        "year": "2012",
+        "repo": "isos",
+        "link": "windows/Windows Multipoint Server 2012.iso",
+        "img": "https://betawiki.net/images/2/22/MP2010-Desktop.png"
+    },
+    {
+        "name": "Windows Server 2008 R2 (SP1) (amd64)",
+        "desc": "R2 release of Server 2008, now based on Windows 7.",
+        "cat": "Windows Operating Systems",
+        "year": "2010",
+        "repo": "isos",
+        "link": "windows/Windows Server 2008 R2 SP1 x64.iso",
+        "img": "http://4.bp.blogspot.com/-vbCnepqK5Hg/VHXy7i_WyFI/AAAAAAAAIZw/b4mQ-UIZbGU/s1600/ghost-all-main-windows-server-2008-r2-datacenter-full-key4vip.info.png"
+    },
+    {
+        "name": "Windows Server 2008 (SP2) (amd64)",
+        "desc": "Sevice Pack 2 release of Server 2008, the server counterpart to Windows Vista.",
+        "cat": "Windows Operating Systems",
+        "year": "2009",
+        "repo": "isos",
+        "link": "windows/Windows Server 2008 SP2 x64.iso",
+        "img": "https://www.jain.software/wp-content/uploads/2016/05/server-2008-standard-r2.jpg"
+    },
+    {
+        "name": "Windows Server 2012 R2 (RTM) (amd64)",
+        "desc": "R2 release of Server 2012, now based on Windows 8.1",
+        "cat": "Windows Operating Systems",
+        "year": "2013",
+        "repo": "isos",
+        "link": "windows/Windows Server 2012 R2.iso",
+        "img": "https://licenciasoem.com/wp-content/uploads/2020/05/windows-server-2012-datacenter-r2-1024x1024.jpg"
+    },
+    {
+        "name": "Windows Server 2012 (RTM) (amd64)",
+        "desc": "RTM release of Server 2012, based on Windows 8",
+        "cat": "Windows Operating Systems",
+        "year": "2012",
+        "repo": "isos",
+        "link": "windows/Windows Server 2012.iso",
+        "img": "http://www.daossoft.com/images/password-recovery-tips/3-must-know-tricks-how-to-reset-windows-2012-password/windows-server-2012-installation-cd.jpg"
+    },
+    {
+        "name": "Windows Server 2016 (2018 Update) (Redstone 1) (amd64)",
+        "desc": "2021 updated release of Server 2016, based on Windows 10. Releases now update based on update channels.",
+        "cat": "Windows Operating Systems",
+        "year": "2016",
+        "repo": "isos",
+        "link": "windows/Windows Server 2016.iso",
+        "img": "https://soykeys.com/wp-content/uploads/2020/10/81nr2GbR0L._AC_SL1500_-1010x1024.jpg"
+    },
+    {
+        "name": "Windows Server 2019 LTSC (2021 Update) (Redstone 5) (amd64)",
+        "desc": "2021 updated release of Server 2019, based on Windows 10 1809, and part of the LTSC",
+        "cat": "Windows Operating Systems",
+        "year": "2018",
+        "repo": "isos",
+        "link": "windows/Windows Server 2019.iso",
+        "img": "https://s13emagst.akamaized.net/products/45400/45399120/images/res_64cdb56417272d630463074bf1e18de9.jpg"
+    },
+    {
+        "name": "Windows Server 2022 LTSC (2024 Update) (Iron) (amd64)",
+        "desc": "2024 Update Release of Server 2022, based on Windows 10 21H2, and part of the LTSC",
+        "cat": "Windows Operating Systems",
+        "year": "2021",
+        "repo": "isos",
+        "link": "windows/Windows Server 2022.iso",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/33J-0002-000J9-V02.jpg"
+    },
+    {
+        "name": "Windows Server 2025 LTSC (RTM) (Germanium) (amd64)",
+        "desc": "RTM release of Server 2025, based on Windows 11 24H2, and part of the LTSC",
+        "cat": "Windows Operating Systems",
+        "year": "2024",
+        "repo": "isos",
+        "link": "windows/Windows Server 2025.iso",
+        "img": "https://betawiki.net/images/c/ce/WindowsServer2025-10.0.26100.863-Desktop.png"
+    },
+    {
+        "name": "Windows Vista (SP2) (amd64)",
+        "desc": "64-bit release of Windows Vista, Service Pack 2",
+        "cat": "Windows Operating Systems",
+        "year": "2009",
+        "repo": "isos",
+        "link": "windows/Windows Vista SP2 x64.iso",
+        "img": "https://www.mydigitallife.net/wp-content/uploads/2007/02/x64-vista-dvd.jpg"
+    },
+    {
+        "name": "Windows Vista (SP2) (i686)",
+        "desc": "32-bit release of Windows Vista, Service Pack 2",
+        "cat": "Windows Operating Systems",
+        "year": "2009",
+        "repo": "isos",
+        "link": "windows/Windows Vista SP2 x86.iso",
+        "img": "https://live.staticflickr.com/210/474418845_1dad7178f5_b.jpg"
+    },
+    {
+        "name": "Windows XP Professional (SP3) (i686)",
+        "desc": "Service Pack 3 release of Windows XP Professional",
+        "cat": "Windows Operating Systems",
+        "year": "2008",
+        "repo": "isos",
+        "link": "windows/Windows XP Professional SP3 x86.iso",
+        "img": "http://www.jaqandrews.com/wordpress/wp-content/uploads/2014/04/Windows-XP-Professional-CD.jpg"
+    },
+    {
+        "name": "Windows 2000 Professional (RTM) (i586)",
+        "desc": "RTM release of Windows 2000, recommended to use SP4",
+        "cat": "Windows Operating Systems",
+        "year": "2000",
+        "repo": "isos",
+        "link": "windows/Windows 2000 Professional.iso",
+        "img": "https://archive.org/download/microsoftwindows2000advancedserver120-dayevaluation/CD.jpg"
+    },
+    {
+        "name": "Windows 10 Enterprise LTSC (RTM) (Vibranium) (amd64)",
+        "desc": "Final LTSC release of Windows 10 Enterprise, based on Windows 10 21H2",
+        "cat": "Windows Operating Systems",
+        "year": "2021",
+        "repo": "isos",
+        "link": "windows/en-us_windows_10_enterprise_ltsc_2021_x64_dvd_d289cf96.iso",
+        "img": "https://archive.org/download/Windows10EnterpriseLTSC202164Bit/Windows%2010%20Enterprise%20LTSC%202021-2021-11-21-01-45-28.png"
+    },
+    {
+        "name": "Windows XP Professional x64 Edition (SP2) (amd64)",
+        "desc": "64-bit Version of Windows XP, based on Server 2003",
+        "cat": "Windows Operating Systems",
+        "year": "2007",
+        "repo": "isos",
+        "link": "windows/en_win_xp_pro_x64_with_sp2_vl_X13-41611.iso",
+        "img": "https://c1.neweggimages.com/ProductImage/37-102-034-02.jpg"
+    },
+    {
+        "name": "Microsoft Office 2003 Professional (RTM) (i486)",
+        "desc": "RTM release of Office 2003, Professional SKU",
+        "cat": "Windows NT Software",
+        "year": "2003",
+        "repo": "isos",
+        "link": "software/en_office_professional_enterprise_edition_2003_united_states_x86_cd_489281.iso",
+        "img": "https://archive.org/download/office-2003-greek-oem_202005/OFFICE2003_PRO.JPG"
+    },
+    {
+        "name": "NetBSD 10.1 (amd64)",
+        "desc": "Version 10.1 of NetBSD, CD image for amd64 systems",
+        "cat": "UNIX Operating Systems",
+        "year": "2024",
+        "repo": "isos",
+        "link": "other/NetBSD-10.1-amd64.iso",
+        "img": "https://archive.org/download/net-bsd-x-68k/NetBSD%20X68k%20CD.jpg"
+    },
+    {
+        "name": "Windows XP Professional (RTM) (i686)",
+        "desc": "The original RTM build of Windows XP, recommended to use SP3.",
+        "cat": "Windows Operating Systems",
+        "year": "2001",
+        "repo": "isos",
+        "link": "windows/en_winxp_pro_x86_build2600_iso.img",
+        "img": "http://1.bp.blogspot.com/-ygz7RLtS4do/TcPbkpTaJUI/AAAAAAAAAG4/UW6Sxkak100/s1600/Windows_XP_FULL_CD.jpg"
+    },
+    {
+        "name": "Windows 8.1 (Update 3) (amd64)",
+        "desc": "Update 3 build of Windows 8.1, the hasty job to mend Windows 8's faults.",
+        "cat": "Windows Operating Systems",
+        "year": "2014",
+        "repo": "isos",
+        "link": "windows/en_windows_8.1_with_update_x64_dvd_6051480.iso",
+        "img": "https://i.pinimg.com/originals/61/81/85/61818539732b3076222a9e936efe6061.jpg"
+    },
+    {
+        "name": "ReactOS 0.4.15 (i586?)",
+        "desc": "Open Source clean room reimplementation of Windows NT. Barely functions.",
+        "cat": "Other Operating Systems",
+        "year": "2025",
+        "repo": "isos",
+        "link": "other/ReactOS-0.4.15-x86.iso",
+        "img": "http://svn.reactos.org/media/reactos_0.3.1_booklet_cover.png"
+    },
+    {
+        "name": "Mac OS X 10.8.2 (Mountain Lion) (i686) (Niresh)",
+        "desc": "Heavily patched installer for Mac OS X 10.8.2 Mountain Lion",
+        "cat": "UNIX Operating Systems",
+        "year": "2021?",
+        "repo": "isos",
+        "link": "other/Niresh's 10.8.2 Installer.iso",
+        "img": "https://meechanmama.work/wp-content/uploads/2024/01/%E3%81%86%E3%82%8B%E6%98%9F%E3%82%84%E3%81%A4%E3%82%89-%E7%AC%AC2%E6%9C%9F.jpg"
+    },
+    {
+        "name": "Mac OS X Driver Disc",
+        "desc": "Collection of drivers for Mac OS X",
+        "cat": "Miscellaneous",
+        "year": "N/A",
+        "repo": "isos",
+        "link": "driver/OSXDrivers.iso",
+        "img": "https://flylib.com/books/2/673/1/html/2/images/11inf20.jpg"
+    },
+    {
+        "name": "Virtio 0.1.225 (Windows)",
+        "desc": "Collection of VM drivers for Windows, version 0.1.225",
+        "cat": "Miscellaneous",
+        "year": "2022",
+        "repo": "isos",
+        "link": "driver/virtio-win-0.1.225.iso",
+        "img": "https://user-images.githubusercontent.com/49584984/236659909-9cab16e3-1abf-4948-ab45-af1e8676a4db.png"
+    },
+    {
+        "name": "Virtio 1.9.44 (Windows)",
+        "desc": "Collection of VM drivers for Windows, version 1.9.44",
+        "cat": "Miscellaneous",
+        "year": "2025",
+        "repo": "isos",
+        "link": "driver/virtio-win-1.9.44.iso",
+        "img": "https://user-images.githubusercontent.com/49584984/236659909-9cab16e3-1abf-4948-ab45-af1e8676a4db.png"
+    },
+    {
+        "name": "FreeDOS 1.3 (i386?) (Live)",
+        "desc": "FreeDOS 1.3 Live CD, a free replacement for DOS.",
+        "cat": "Other DOS Operating Systems",
+        "year": "2022",
+        "repo": "isos",
+        "link": "dos/FD13LIVE.iso",
+        "img": "http://www.geocities.ws/jvaldeztoo/FreeDOS/Downloads/CDlabel1F.jpg"
+    }
+]
