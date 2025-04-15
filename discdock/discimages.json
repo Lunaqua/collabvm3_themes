@@ -358,5 +358,23 @@
         "repo": "isos",
         "link": "dos/FD13LIVE.iso",
         "img": "http://www.geocities.ws/jvaldeztoo/FreeDOS/Downloads/CDlabel1F.jpg"
+    },
+    {
+        "name": "Windows Server 2003 (SP2) (amd64)",
+        "desc": "Service Pack 2 release of Windows Server 2003, 64-bit edition. Server companion to Windows XP",
+        "cat": "Windows Operating Systems",
+        "year": "2007",
+        "repo": "isos",
+        "link": "windows/en_windows_server_2003_sp2_x64_cd.iso",
+        "img": ""
+    },
+    {
+        "name": "Windows Server 2003 Enterprise (SP1) (i586)",
+        "desc": "Service Pack 1 release of Windows Server 2003, 32-bit edition. Server companion to Windows XP",
+        "cat": "Windows Operating Systems",
+        "year": "2005",
+        "repo": "isos",
+        "link": "windows/en_windows_server_2003_with_sp1_enterprise.iso",
+        "img": ""
     }
 ]
