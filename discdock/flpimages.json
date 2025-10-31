@@ -9,6 +9,15 @@
         "img": "https://www.modellbahntechnik-aktuell.de/uploads/pics/Modellbahn-FreeDOS-Boot-CD.jpg"
     },
     {
+        "name": "FreeDOS 1.4 (i386?) (Boot Image)",
+        "desc": "Boot Floppy for booting FreeDOS on older systems, version 1.4",
+        "cat": "Other DOS Operating Systems",
+        "year": "2025",
+        "repo": "flp",
+        "link": "dos/FD14BOOT.img",
+        "img": "https://www.modellbahntechnik-aktuell.de/uploads/pics/Modellbahn-FreeDOS-Boot-CD.jpg"
+    },
+    {
         "name": "MS-DOS 6.22 (i86) (Disk 1)",
         "desc": "The last official version of MS-DOS, version 6.22.",
         "cat": "MS-DOS Operating Systems",
@@ -33,6 +42,15 @@
         "year": "1994",
         "repo": "flp",
         "link": "dos/MS-DOS 6.22 - Disk 3.img",
+        "img": "https://i.imgur.com/q3wgLA2.jpeg"
+    },
+    {
+        "name": "MS-DOS 6.22 (i86) (Sup. Disk)",
+        "desc": "Supplemental disk for MS-DOS, version 6.22.",
+        "cat": "MS-DOS Operating Systems",
+        "year": "1994",
+        "repo": "flp",
+        "link": "dos/MS-DOS 6.22 - Supplemental Disk.img",
         "img": "https://i.imgur.com/q3wgLA2.jpeg"
     }
 ]

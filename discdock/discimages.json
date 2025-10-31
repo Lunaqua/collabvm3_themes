@@ -122,7 +122,7 @@
         "cat": "Windows Operating Systems",
         "year": "2000",
         "repo": "isos",
-        "link": "Windows Me (101 - Retail Full).iso",
+        "link": "windows/Windows Me (101 - Retail Full).iso",
         "img": "http://www.winhistory.de/more/bilder/cd_win_me_2.jpg"
     },
     {
@@ -375,6 +375,42 @@
         "year": "2005",
         "repo": "isos",
         "link": "windows/en_windows_server_2003_with_sp1_enterprise.iso",
+        "img": ""
+    },
+    {
+        "name": "FreeDOS 1.4 (i386?) (Live)",
+        "desc": "FreeDOS 1.4 Live CD, a free replacement for DOS.",
+        "cat": "Other DOS Operating Systems",
+        "year": "2025",
+        "repo": "isos",
+        "link": "dos/FD14LIVE.iso",
+        "img": "http://www.geocities.ws/jvaldeztoo/FreeDOS/Downloads/CDlabel1F.jpg"
+    },
+    {
+        "name": "FreeDOS 1.4 (i386?) (Bonus)",
+        "desc": "Bonus CD for FreeDOS 1.4",
+        "cat": "Other DOS Operating Systems",
+        "year": "2025",
+        "repo": "isos",
+        "link": "dos/FD14BNS.iso",
+        "img": "http://www.geocities.ws/jvaldeztoo/FreeDOS/Downloads/CDlabel1F.jpg"
+    },
+    {
+        "name": "VirtualBox Guest Additions 6.1.32",
+        "desc": "VirtuaBox Guest Additions (drivers etc) for various operating systems.",
+        "cat": "Miscellaneous",
+        "year": "2022",
+        "repo": "isos",
+        "link": "driver/VBoxGuestAdditions_6.1.32.iso",
+        "img:": "https://www.ircwebnet.com/wp-content/uploads/2021/02/virtualbox-61.png"
+    },
+    {
+        "name": "SoftGPU 0.8.2025.53",
+        "desc": "Graphics drivers and utilities for Windows 9x",
+        "cat": "Miscellaneous",
+        "year": "2025",
+        "repo": "isos",
+        "link": "driver/softgpu-0.8.2025.53.iso",
         "img": ""
     }
 ]

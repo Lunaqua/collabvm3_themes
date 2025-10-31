@@ -86,7 +86,7 @@ h5 {
         transform: translateX(-50px);
     }
     to {
-        opactity: 100%;
+        opacity: 100%;
         transform: none;
     }
 }

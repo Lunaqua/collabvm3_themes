@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM Disc Dock
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      1.0.1
+// @version      1.0.2
 // @description  Disc Dock for CollabVM
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/
@@ -14,7 +14,8 @@
 // @grant GM_getResourceText
 // ==/UserScript==
 
-// This is based (ripped off) from a similar concept in use at https://infinitemac.org/
+// This is based (ripped off) from a similar concept in use at 
+// https://infinitemac.org/
 // Script is provided under the MIT License. (see ../LICENSE)
 
 /* void loadCss() - Load the userCSS from file, and insert it. 
