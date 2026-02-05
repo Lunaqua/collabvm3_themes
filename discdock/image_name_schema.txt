@@ -1,0 +1,5 @@
+os:
+name version variant 'codename' [build number] (architecture) (boot/netinst etc) (creator) [disk 1/2]
+
+software:
+name version variant 'codename' (minOS) (architecture) [disk 1/2]

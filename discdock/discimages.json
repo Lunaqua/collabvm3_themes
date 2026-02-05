@@ -1,7 +1,7 @@
 [
     {
-        "name": "Debian 12.9.0 (bookworm) (amd64) (netinst)",
-        "desc": "Debian 12 aka bookworm, amd64 net installer",
+        "name": "Debian 12.9.0 'bookworm' (amd64) (netinst)",
+        "desc": "Version 12 aka bookworm, of the long running Linux distribution Debian. Net-based installer",
         "cat": "Linux Distributions",
         "year": "2024",
         "repo": "isos",
@@ -10,7 +10,7 @@
     },
     {
         "name": "Rocky Linux 9.5 (amd64) (boot)",
-        "desc": "Rocky Linux 9.5, amd64 net installer",
+        "desc": "Rocky Linux is the successor to CentOS, a RHEL compatible distro, this is version 9.5",
         "cat": "Linux Distributions",
         "year": "2024",
         "repo": "lily",
@@ -18,8 +18,8 @@
         "img": "https://www.linux-magazine.com/var/linux_magazin/storage/images/issues/2022/264/this-month-s-dvd/dvd-264-lmi_sideb_rocky.png/812076-1-eng-US/dvd-264-lmi_SideB_Rocky.png1_reference.png"
     },
     {
-        "name": "Hiren's BootCD (PE) (amd64)",
-        "desc": "The next generation Hiren's Boot Disc, based on Windows 10 PE",
+        "name": "Hiren's BootCD 1.0.8 (amd64) (PE)",
+        "desc": "The next generation Hiren's Boot Disc, based on Windows 11 PE",
         "cat": "Miscellaneous",
         "year": "2024",
         "repo": "isos",
@@ -27,7 +27,7 @@
         "img": "https://www.hirensbootcd.org/wp-content/uploads/2024/01/HBCD_PE_Screenshot_1.png"
     },
     {
-        "name": "Mac OS X Driver Disc",
+        "name": "Mac OS X Driver Disc (Mac OS X 10.4) (i586)",
         "desc": "Collection of drivers for Mac OS X",
         "cat": "Miscellaneous",
         "year": "N/A",
@@ -36,8 +36,8 @@
         "img": "https://flylib.com/books/2/673/1/html/2/images/11inf20.jpg"
     },
     {
-        "name": "SoftGPU 0.8.2025.53",
-        "desc": "Graphics drivers and utilities for Windows 9x",
+        "name": "SoftGPU 0.8.2025.53 (Windows 95) (i386)",
+        "desc": "Modern graphics drivers and utilities for Windows 9x",
         "cat": "Miscellaneous",
         "year": "2025",
         "repo": "isos",
