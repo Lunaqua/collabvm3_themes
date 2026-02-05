@@ -31,7 +31,7 @@ VM7 and VM8.
 Should work with at least the current and 3.0 "experimental" web application. Partially works with classic.
 It might not work with GreaseMonkey.
 
-Version 1.0.1
+Version 1.0.2
 
 [Download](https://github.com/Lunaqua/collabvm3_themes/raw/refs/heads/master/discdock/collabvm_discdock.js)
 

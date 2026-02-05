@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CollabVM3 Themes
 // @namespace    https://github.com/Lunaqua/collabvm3_themes
-// @version      2025-03-10_2
+// @version      2026-02-05
 // @description  Themes for CollabVM 3
 // @author       navi4205
 // @match        https://computernewb.com/collab-vm/experimental-vm/
@@ -31,13 +31,14 @@
 // individual reset of colours
 
 // UI Fixes:
-// Fix modal centreing
-// Fix Tab underlining, and colours
+// Fix Tab colours
 // Fix inconsistent spacing on colours tab
 // Make Colour Picker actually be part of the modal
 // Proper border padding
 // Fully scalable with different fonts borders etc.
 // Prevent changing from unsaved theme.
+// Make numbers actually update
+// Make UI update when loading a preset
 
 // Now:
 // custom padding
