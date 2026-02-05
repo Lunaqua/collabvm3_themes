@@ -18,6 +18,16 @@
 // https://infinitemac.org/
 // Script is provided under the MIT License. (see ../LICENSE)
 
+/* TODO
+ * move images to smaller hosted images
+ * improve naming consistency
+ * add software requirements
+ * update list again
+ * add notable bootlegs
+ * non computernewb isos
+ * 
+ */
+
 /* void loadCss() - Load the userCSS from file, and insert it. 
  * This is achieved by simply adding it to the head tag 
  */
