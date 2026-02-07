@@ -1,5 +1,1 @@
-os:
-name version variant 'codename' [build number] (architecture) (boot/netinst etc) (creator) [disk 1/2]
-
-software:
-name version variant 'codename' (minOS) (architecture) [disk 1/2]
+name version variant 'codename, update, update branch' [build number] (architecture) (boot/netinst etc) (creator) [disk 1/2]
